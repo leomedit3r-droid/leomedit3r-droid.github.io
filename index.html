@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2e">
+  <meta name="description" content="LEOMEDIT3R 的个人空间：项目、实验、文章和持续发生的新想法。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LEOMEDIT3R — Ideas in Motion">
+  <meta property="og:description" content="把想法，变成可体验的作品。">
+  <title>LEOMEDIT3R — Ideas in Motion</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0a1020; --panel:#101b30; --panel2:#15213a; --fg:#edf3ff; --muted:#9cacbf; --subtle:#6f859f; --line:rgba(186,211,255,.12); --blue:#8fb8ff; --lime:#c7f5a3; --pink:#ffc6a6; --shadow:rgba(0,0,0,.25); }
+    :root[data-theme="light"] { color-scheme:light; --bg:#f6f8fc; --panel:#ffffff; --panel2:#eef3fb; --fg:#172338; --muted:#576780; --subtle:#73849c; --line:rgba(28,57,110,.13); --blue:#285aca; --lime:#39743d; --pink:#ac5b34; --shadow:rgba(46,77,133,.09); }
+    *, *::before, *::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:95px; }
+    body { margin:0; min-width:320px; background:var(--bg); color:var(--fg); font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif; transition:background .25s,color .25s; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    button, a { -webkit-tap-highlight-color:transparent; }
+    :focus-visible { outline:3px solid var(--blue); outline-offset:4px; border-radius:5px; }
+    ::selection { background:#759dfc; color:#071225; }
+    .skip { position:absolute; left:15px; top:-100px; z-index:20; padding:8px 16px; background:var(--lime); color:#122019; }
+    .skip:focus { top:10px; }
+    .shell { width:min(1130px,calc(100% - 48px)); margin-inline:auto; }
+    .topbar { position:sticky; top:0; z-index:12; border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--bg) 87%,transparent); backdrop-filter:blur(18px); }
+    .nav { display:flex; align-items:center; justify-content:space-between; min-height:75px; gap:20px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; font-size:14px; font-weight:850; letter-spacing:.12em; white-space:nowrap; }
+    .brand-mark { display:grid; place-items:center; width:34px; height:34px; border:1px solid var(--line); border-radius:11px; font-weight:900; font-size:18px; color:var(--lime); background:var(--panel); }
+    .links { display:flex; align-items:center; gap:33px; }
+    .links a { font-size:13px; font-weight:650; color:var(--muted); transition:color .15s; }
+    .links a:hover,.links a[aria-current] { color:var(--fg); }
+    .nav-actions { display:flex; align-items:center; gap:8px; }
+    .icon-button { width:39px; height:39px; display:grid; place-items:center; border-radius:12px; border:1px solid var(--line); color:var(--fg); background:var(--panel); cursor:pointer; }
+    .icon-button:hover { border-color:var(--blue); }
+    .menu-button { display:none; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(380px,.88fr); align-items:center; min-height:650px; padding:90px 0 85px; gap:65px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; color:var(--lime); font-size:12px; letter-spacing:.13em; font-weight:650; text-transform:uppercase; }
+    .status-dot { width:7px; height:7px; background:var(--lime); border-radius:50%; box-shadow:0 0 0 5px color-mix(in srgb,var(--lime) 14%,transparent); }
+    h1,h2,h3,p { margin-top:0; }
+    .hero h1 { font-size:clamp(43px,5.15vw,73px); font-weight:820; line-height:1.16; letter-spacing:-.055em; margin:24px 0 23px; }
+    .hero h1 span { color:var(--blue); }
+    .hero-copy { max-width:550px; font-size:16px; color:var(--muted); line-height:1.95; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:31px; }
+    .btn { display:inline-flex; justify-content:center; align-items:center; gap:11px; padding:12px 20px; border:1px solid var(--line); border-radius:12px; font-size:14px; font-weight:760; transition:transform .15s,background .15s,border-color .15s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn.primary { background:var(--lime); color:#11211a; border-color:var(--lime); }
+    .btn.secondary { background:var(--panel); }
+    .hero-footnote { margin-top:46px; color:var(--subtle); font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .scene { position:relative; width:100%; aspect-ratio:1.04; display:grid; place-items:center; isolation:isolate; }
+    .scene::before { content:""; position:absolute; inset:12%; z-index:-1; background:radial-gradient(ellipse,rgba(79,112,220,.19),transparent 67%); filter:blur(20px); }
+    .orbit { position:absolute; width:87%; aspect-ratio:1; border:1px solid var(--line); border-radius:50%; }
+    .orbit.two { width:68%; border-style:dashed; animation:spin 70s linear infinite; }
+    .orbit.three { width:47%; border-color:color-mix(in srgb,var(--blue) 34%,transparent); }
+    .orbiter { width:11px; height:11px; position:absolute; top:14%; left:18%; background:var(--lime); border-radius:50%; box-shadow:0 0 30px var(--lime); }
+    .hero-object { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; width:43%; aspect-ratio:1; border-radius:31%; transform:rotate(-13deg); background:linear-gradient(145deg,#a0bfff,#426de0 60%,#26396e); box-shadow:15px 25px 80px rgba(23,46,124,.35),inset 1px 2px 8px rgba(255,255,255,.35); }
+    .hero-object strong { font-size:clamp(36px,6vw,81px); line-height:1; color:#fff; letter-spacing:-.1em; font-weight:900; }
+    .hero-object small { font-size:10px; color:#d8e6ff; font-family:monospace; letter-spacing:.2em; }
+    .float-note { position:absolute; display:flex; align-items:center; gap:8px; padding:11px 15px; border:1px solid var(--line); border-radius:12px; background:var(--panel); font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; color:var(--muted); box-shadow:0 16px 35px var(--shadow); }
+    .float-note.top { top:11%; right:-2%; transform:rotate(6deg); }
+    .float-note.bottom { bottom:12%; left:0; transform:rotate(-5deg); }
+    .float-note em { font-style:normal; color:var(--lime); }
+    section { padding:75px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:22px; margin-bottom:31px; }
+    .section-head .kicker { color:var(--blue); font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.12em; text-transform:uppercase; }
+    h2 { font-size:clamp(29px,3.25vw,42px); letter-spacing:-.035em; line-height:1.3; margin:12px 0 0; }
+    .section-note { max-width:350px; color:var(--muted); font-size:14px; margin-bottom:3px; }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .card { position:relative; min-height:315px; display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); border-radius:21px; background:var(--panel); padding:25px; transition:transform .2s,border-color .2s,box-shadow .2s; }
+    .card:hover { transform:translateY(-5px); border-color:color-mix(in srgb,var(--blue) 45%,transparent); box-shadow:0 15px 50px var(--shadow); }
+    .card-tag { font:11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.1em; color:var(--muted); text-transform:uppercase; }
+    .card-art { height:118px; display:flex; justify-content:center; align-items:center; font-size:62px; color:var(--blue); }
+    .card-art.grid-art { position:relative; }
+    .grid-art::before { content:""; width:92px; height:92px; transform:perspective(400px) rotateX(58deg) rotateZ(40deg); border:2px solid var(--blue); border-radius:14px; box-shadow:15px 15px 0 -2px var(--panel),15px 15px 0 var(--blue),30px 30px 0 -2px var(--panel),30px 30px 0 var(--blue); }
+    .card-art.code-art { font:700 46px ui-monospace,Consolas,monospace; color:var(--lime); }
+    .card-art.note-art { color:var(--pink); }
+    .card h3 { font-size:21px; line-height:1.35; letter-spacing:-.025em; margin:11px 0; }
+    .card p { color:var(--muted); font-size:13px; line-height:1.85; margin:0; }
+    .card-link { margin-top:auto; padding-top:20px; color:var(--blue); font-size:13px; font-weight:750; }
+    .feature { display:grid; grid-template-columns:1.1fr .9fr; gap:35px; padding:37px; border-radius:24px; border:1px solid var(--line); background:linear-gradient(125deg,var(--panel),var(--panel2)); }
+    .feature p { color:var(--muted); font-size:15px; max-width:560px; line-height:1.95; margin-top:15px; }
+    .feature ul { list-style:none; margin:10px 0 0; padding:0; display:grid; gap:13px; }
+    .feature li { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:14px; }
+    .feature li::before { content:"✦"; color:var(--lime); }
+    .notes-panel { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:33px; border:1px dashed color-mix(in srgb,var(--blue) 35%,var(--line)); border-radius:20px; background:var(--panel); }
+    .notes-panel h3 { font-size:20px; margin:0 0 6px; }
+    .notes-panel p { color:var(--muted); margin:0; font-size:14px; }
+    .notes-icon { display:grid; place-items:center; width:57px; height:57px; flex:0 0 auto; border-radius:15px; background:var(--panel2); color:var(--blue); font-size:28px; }
+    footer { margin-top:50px; border-top:1px solid var(--line); }
+    .footer-inner { min-height:135px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .footer-inner p { font-size:12px; color:var(--subtle); margin:0; }
+    .footer-link { font-size:13px; color:var(--blue); }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @media(max-width:930px) {
+      .hero { grid-template-columns:1fr .75fr; gap:24px; min-height:570px; }
+      .scene { overflow:hidden; }
+      .float-note { display:none; }
+      .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .cards .card:last-child { grid-column:1/-1; min-height:245px; }
+    }
+    @media(max-width:640px) {
+      .shell { width:min(100% - 32px,520px); }
+      .nav { min-height:68px; }
+      .brand { font-size:12px; }
+      .links { display:none; position:absolute; top:68px; left:0; right:0; padding:19px 24px 22px; background:var(--bg); border-bottom:1px solid var(--line); box-shadow:0 15px 25px var(--shadow); }
+      .links.open { display:flex; flex-direction:column; align-items:flex-start; gap:17px; }
+      .menu-button { display:grid; }
+      .hero { display:flex; flex-direction:column; align-items:stretch; min-height:0; padding:70px 0 40px; }
+      .hero h1 { font-size:clamp(40px,11vw,59px); }
+      .hero-copy { font-size:15px; }
+      .hero-footnote { margin-top:30px; }
+      .scene { width:min(100%,370px); margin:-10px auto 0; }
+      .section-head { align-items:start; flex-direction:column; margin-bottom:25px; }
+      section { padding:57px 0; }
+      .cards { grid-template-columns:1fr; }
+      .cards .card:last-child { grid-column:auto; }
+      .card { min-height:270px; }
+      .card-art { height:105px; }
+      .feature { grid-template-columns:1fr; padding:26px; gap:10px; }
+      .notes-panel { padding:23px; }
+      .footer-inner { flex-direction:column; align-items:flex-start; justify-content:center; padding:24px 0; }
+    }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <header class="topbar">
+    <nav class="shell nav" aria-label="主导航">
+      <a class="brand" href="#home" aria-label="LEOMEDIT3R 首页"><span class="brand-mark" aria-hidden="true">L.</span> LEOMEDIT3R</a>
+      <div class="links" id="nav-links">
+        <a href="#projects">项目</a><a href="#about">关于</a><a href="#notes">文章</a>
+        <a href="https://github.com/leomedit3r-droid" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-button" type="button" id="theme-toggle" title="切换深色 / 浅色主题" aria-label="切换深色或浅色主题">◐</button>
+        <button class="icon-button menu-button" type="button" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="打开导航菜单">☰</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="shell" id="home">
+      <div class="hero">
+        <div>
+          <div class="eyebrow"><span class="status-dot"></span> PERSONAL SPACE / DIGITAL GARDEN</div>
+          <h1>把想法，<br>变成<span>可体验</span><br>的作品。</h1>
+          <p class="hero-copy">你好，这里是 LEOMEDIT3R 的数字空间。实验项目、开发记录与偶然闪现的灵感，都可以在这里找到属于自己的位置。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">探索作品 <span aria-hidden="true">↗</span></a>
+            <a class="btn secondary" href="https://github.com/leomedit3r-droid" target="_blank" rel="noopener noreferrer">查看 GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-footnote">IDEAS → PROTOTYPES → EXPERIENCES<br>Built to evolve. Not to stay still.</p>
+        </div>
+        <div class="scene" aria-label="由三条轨道与蓝色 L 方块组成的抽象创作图形" role="img">
+          <div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
+          <div class="orbiter"></div>
+          <div class="hero-object"><strong>L.</strong><small>CREATE / ITERATE</small></div>
+          <div class="float-note top"><em>●</em> status: exploring</div>
+          <div class="float-note bottom"><em>↗</em> next: something new</div>
+        </div>
+      </div>
+    </div>
+    <section id="projects" class="shell" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div><div class="kicker">01 / Selected paths</div><h2 id="projects-title">从这里开始探索</h2></div>
+        <p class="section-note">把兴趣变成实践，把过程变成可以复用的经验。</p>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://github.com/leomedit3r-droid" target="_blank" rel="noopener noreferrer">
+          <div class="card-tag">BUILD / EXPERIMENT</div><div class="card-art grid-art" aria-hidden="true"></div>
+          <h3>实验与项目</h3><p>原型、工具与正在构建的新体验。从一个想法开始，不断打磨。</p><div class="card-link">前往 GitHub ↗</div>
+        </a>
+        <a class="card" href="https://github.com/leomedit3r-droid/leomedit3r-droid.github.io" target="_blank" rel="noopener noreferrer">
+          <div class="card-tag">CODE / OPEN SOURCE</div><div class="card-art code-art" aria-hidden="true">&lt;/&gt;</div>
+          <h3>开放的构建过程</h3><p>这个网站的基础代码与迭代记录都可以从公开仓库查看。</p><div class="card-link">查看网站仓库 ↗</div>
+        </a>
+        <a class="card" href="#notes">
+          <div class="card-tag">THOUGHTS / NOTES</div><div class="card-art note-art" aria-hidden="true">✳</div>
+          <h3>写作与笔记</h3><p>整理思考、设计决策与值得保存的发现。内容会持续补充。</p><div class="card-link">前往文章区 ↓</div>
+        </a>
+      </div>
+    </section>
+    <section class="shell" id="about" aria-labelledby="about-title">
+      <div class="feature">
+        <div><div class="kicker">02 / About this place</div><h2 id="about-title">这是一个持续生长的空间。</h2><p>不必把每个想法都变成宏大的项目；有时一段代码、一篇记录，或者一个不起眼的实验，也值得被认真对待。这个网站会保留它们。</p></div>
+        <ul aria-label="网站内容方向"><li>可探索的项目与实验</li><li>建设过程中的经验与复盘</li><li>偶尔偏离主线的好奇心</li><li>可以被追溯的公开代码</li></ul>
+      </div>
+    </section>
+    <section class="shell" id="notes" aria-labelledby="notes-title">
+      <div class="section-head"><div><div class="kicker">03 / Field notes</div><h2 id="notes-title">笔记与长文</h2></div><p class="section-note">这里暂时不填充虚构的文章。内容准备好后再陆续发布。</p></div>
+      <div class="notes-panel">
+        <div><h3>记录即将开始。</h3><p>此区域已预留给真实的文章目录、开发日志与随笔。</p></div>
+        <div class="notes-icon" aria-hidden="true">✎</div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><div><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">L.</span> LEOMEDIT3R</a><p>Independent thoughts, tangible experiments.</p></div><div><a class="footer-link" href="https://github.com/leomedit3r-droid" target="_blank" rel="noopener noreferrer">GitHub ↗</a><p>© <span id="year">2026</span> LEOMEDIT3R.</p></div></div></footer>
+  <script>
+    (function () {
+      var root = document.documentElement, button = document.getElementById('theme-toggle');
+      var preferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      var saved = null;
+      try { saved = localStorage.getItem('leomedit3r-theme'); } catch(e) {}
+      function setTheme(t) { root.setAttribute('data-theme', t); button.setAttribute('aria-label', t === 'dark' ? '切换为浅色主题' : '切换为深色主题'); button.textContent = t === 'dark' ? '☀' : '☾'; }
+      setTheme(saved === 'light' || saved === 'dark' ? saved : preferred);
+      button.addEventListener('click', function () { var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; setTheme(next); try { localStorage.setItem('leomedit3r-theme', next); } catch(e) {} });
+      var menu = document.getElementById('menu-toggle'), nav = document.getElementById('nav-links');
+      menu.addEventListener('click', function () { var open = !nav.classList.contains('open'); nav.classList.toggle('open', open); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? '关闭导航菜单' : '打开导航菜单'); });
+      nav.addEventListener('click', function (event) { if (event.target.closest('a')) { nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', '打开导航菜单'); } });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
