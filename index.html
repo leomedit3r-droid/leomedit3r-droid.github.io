@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0d11">
+  <meta name="description" content="角色炼化 · 极简版预览。从原作剧情、语音和角色行为中提炼人格指纹，用更少的设定文字，保留更鲜明的角色一致性。包含两份公开对话示例。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="角色炼化 — 让角色更像自己">
+  <meta property="og:description" content="不堆叠标签，提炼人格指纹。查看极简角色炼化的理念、方法与两份公开对话示例。">
+  <title>角色炼化 — 让角色更像自己 · 极简版预览</title>
+  <link rel="stylesheet" href="./assets/site.css">
+  <script src="./assets/site.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip">跳转到主要内容</a>
+  <div class="upperline wrap mono" aria-hidden="true"><span>CHARACTER DISTILLATION / 角色炼化</span><span class="hide-small">LESS NOISE. MORE CHARACTER.</span><strong>EDITION / 001</strong></div>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a href="#home" class="brand" aria-label="角色炼化主页">
+        <span class="brand-emblem" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M16 2.7c5.8 4.3 9.1 8.7 9.1 13.3S21.8 25 16 29.3C10.2 25 6.9 20.6 6.9 16S10.2 7 16 2.7Z"/>
+            <path d="M16 8.3c3.8 2.5 5.8 5.1 5.8 7.7s-2 5.2-5.8 7.7c-3.8-2.5-5.8-5.1-5.8-7.7s2-5.2 5.8-7.7Z"/>
+            <path d="M16 12v8M12 16h8"/>
+          </svg>
+        </span>
+        <span class="brand-text"><span class="brand-cn">角色炼化</span><span class="brand-en mono">PERSONA / DISTILL</span></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#principles">理念</a>
+        <a href="#process">方法</a>
+        <a href="#works">作品预览</a>
+        <a href="#about">关于</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-github" href="https://github.com/leomedit3r-droid/leomedit3r-droid.github.io" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看本站源码">网站源码 <span aria-hidden="true">↗</span></a>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换浅色或深色模式">☼</button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="打开导航菜单">☰</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-status"><span class="status-indicator" aria-hidden="true"></span><span class="eyebrow mono">A MINIMAL PERSONA DISTILLATION PREVIEW</span></div>
+        <h1 id="hero-title">让角色，<br><span class="outline">更像</span><span class="accent">自己。</span></h1>
+        <p class="hero-description">一个角色，不是几条形容词的组合。<br>从原作剧情、语音与行为选择中，提炼表达习惯、关系边界和决策倾向。用尽量精简的人格卡，保留那个角色最难被替代的部分。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#works">查看两个作品 <span aria-hidden="true">↗</span></a>
+          <a class="btn outline" href="#process">了解炼化方法 <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-notice">这是角色炼化方法的产品化极简展示，并非在线运行的炼化工具。</p>
+      </div>
+      <div class="visual" role="group" aria-label="人格指纹与极简人格卡结构的示意图">
+        <div class="visual-grid" aria-hidden="true"></div>
+        <div class="visual-top"><span class="mono">PERSONA LAB / CONCEPT VISUAL</span><span class="mono live">● DESIGN SKETCH</span></div>
+        <div class="float-chip left mono"><strong>INPUT</strong> / 剧情 · 语音</div>
+        <div class="specimen">
+          <div class="specimen-head mono"><span>PERSONA / FINGERPRINT</span><span class="seal">STRUCTURE ONLY</span></div>
+          <div class="fingerprint-wrap">
+            <span class="scan-point mono">IDENTITY · 001</span>
+            <svg class="fingerprint" viewBox="0 0 150 150" aria-hidden="true" focusable="false">
+              <path d="M75 17c-31 0-55 25-55 57 0 14-2 26-10 38"/>
+              <path d="M75 28c-25 0-44 19-44 47 0 29-6 39-13 49"/>
+              <path d="M75 39c-20 0-34 16-34 36 0 27-5 45-12 57"/>
+              <path d="M75 50c-14 0-23 10-23 25 0 32-7 49-12 57"/>
+              <path d="M75 61c-8 0-12 6-12 14 0 25-2 42-9 61"/>
+              <path d="M75 72c-4 0-4 6-4 9 0 22-3 42-9 53"/>
+              <path d="M75 17c31 0 55 25 55 57 0 14 2 26 10 38"/>
+              <path d="M75 28c25 0 44 19 44 47 0 29 6 39 13 49"/>
+              <path d="M75 39c20 0 34 16 34 36 0 27 5 45 12 57"/>
+              <path d="M75 50c14 0 23 10 23 25 0 32 7 49 12 57"/>
+              <path d="M75 61c8 0 12 6 12 14 0 25 2 42 9 61"/>
+              <path d="M75 83c4 0 4 4 4 8 0 19 4 31 9 42"/>
+              <path d="M70 101c0 14-3 26-6 35M82 101c1 13 3 22 6 30"/>
+            </svg>
+          </div>
+          <div class="specimen-data" aria-label="示意结构，非真实角色数据">
+            <div class="data-row"><span class="data-key mono">VOICE</span><span class="data-val">自称 · 语气 · 称呼边界</span></div>
+            <div class="data-row"><span class="data-key mono">BEHAVIOR</span><span class="data-val">情绪反馈 · 行动倾向</span></div>
+            <div class="data-row"><span class="data-key mono">CORE</span><span class="data-val">价值取舍 · 深层动机</span></div>
+          </div>
+        </div>
+        <div class="float-chip right mono"><strong>OUTPUT</strong> / 极简人格卡</div>
+        <div class="visual-bottom mono"><span>THREE LAYERS / ONE IDENTITY</span><span>NOT A LIVE DEMO</span></div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="wrap strip-inner" aria-label="三项设计重点">
+        <div class="strip-item"><span class="strip-num">01</span><div><span class="strip-label">忠于原作</span><span class="strip-small mono">SOURCE-ANCHORED</span></div></div>
+        <div class="strip-item"><span class="strip-num">02</span><div><span class="strip-label">减少人格漂移</span><span class="strip-small mono">IDENTITY CONSISTENCY</span></div></div>
+        <div class="strip-item"><span class="strip-num">03</span><div><span class="strip-label">极简可复用</span><span class="strip-small mono">COMPACT PERSONA</span></div></div>
+      </div>
+    </div>
+
+    <section class="section wrap" id="principles" aria-labelledby="principles-title">
+      <div class="section-heading">
+        <div><span class="section-kicker mono">01 — WHY IT MATTERS</span><h2 id="principles-title">一句“温柔”，<br>解释不了<span style="color:var(--accent)">一个角色。</span></h2></div>
+        <p>真正使角色鲜活的，不只是外在标签，而是她在不同情境下如何表达、靠近、拒绝，以及作出选择。</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar"><div class="pillar-icon" aria-hidden="true">〃</div><h3>独有的语言</h3><p>自称、口癖、句式、停顿与称呼变化。相似的语气不意味着相同的人格。</p></article>
+        <article class="pillar"><div class="pillar-icon" aria-hidden="true">◎</div><h3>关系的分寸</h3><p>不同对象、不同经历下的亲疏距离与反应边界，而非一键套用的“好感度”。</p></article>
+        <article class="pillar"><div class="pillar-icon" aria-hidden="true">◇</div><h3>选择背后的原因</h3><p>角色相信什么、回避什么、愿意承担什么。决策机制比静态形容词更有辨识力。</p></article>
+      </div>
+    </section>
+
+    <section class="method-wrap" id="process" aria-labelledby="process-title">
+      <div class="method-inner wrap">
+        <div class="method-heading">
+          <span class="section-kicker mono">02 — THE METHOD</span>
+          <h2 id="process-title">从大量设定，<br>到<em>人格指纹。</em></h2>
+          <p>尽量保留原作可核查的行为证据，区分“角色怎么想”与“角色怎么说”，让压缩不等于抹平差异。</p>
+        </div>
+        <div class="method-list">
+          <article class="method-step"><span class="step-no mono">01 /</span><div><h3>采集原作锚点</h3><p>整理剧情文本、角色语音、互动情境与重要行为，区分明确证据和未经验证的推断。</p></div></article>
+          <article class="method-step"><span class="step-no mono">02 /</span><div><h3>分层提炼人格</h3><p>从表层表达、中层情绪与关系反应，到深层价值和决策逻辑，寻找稳定、独特的角色特征。</p></div></article>
+          <article class="method-step"><span class="step-no mono">03 /</span><div><h3>极简封装与校验</h3><p>减少冗余标签，将关键特征压缩为可复用的人格结构，再用情境测试检查语气与人格是否漂移。</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section wrap" id="works" aria-labelledby="works-title">
+      <div class="section-heading work-head">
+        <div><span class="section-kicker mono">03 — SELECTED CONVERSATIONS</span><h2 id="works-title">作品，<br><em>比口号更有说服力。</em></h2></div>
+        <p>两份不同角色的炼化实例：锁暝与昔涟。点击作品卡片即可阅读对应的 DeepSeek 公开对话，内容以原始记录为准。</p>
+      </div>
+      <div class="work-list">
+        <a class="work-card" href="https://chat.deepseek.com/share/wrhd0bd8jqmj3z5mjm" target="_blank" rel="noopener noreferrer" aria-label="查看锁暝的角色炼化公开对话，在新标签页打开">
+          <div class="work-top"><span class="work-label mono">CHARACTER STUDY / 001</span><span class="open-arrow" aria-hidden="true">↗</span></div>
+          <div class="work-symbol" aria-hidden="true"><div class="work-orbit"><span>暝</span></div></div>
+          <h3>锁暝 · 角色炼化</h3>
+          <p class="work-desc">锁暝的人格炼化作品预览。进入公开对话，观察角色的措辞、称呼与关系边界如何被表达。</p>
+          <div class="work-footer"><span class="mono">chat.deepseek.com / share</span><strong>阅读完整对话 ↗</strong></div>
+        </a>
+        <a class="work-card" href="https://chat.deepseek.com/share/c2l21x4nznauhoktkh" target="_blank" rel="noopener noreferrer" aria-label="查看昔涟的角色炼化公开对话，在新标签页打开">
+          <div class="work-top"><span class="work-label mono">CHARACTER STUDY / 002</span><span class="open-arrow" aria-hidden="true">↗</span></div>
+          <div class="work-symbol" aria-hidden="true"><div class="work-orbit"><span>涟</span></div></div>
+          <h3>昔涟 · 角色炼化</h3>
+          <p class="work-desc">昔涟的人格炼化作品预览。通过原始对话体验角色的语言习惯、情绪表达与人物辨识度。</p>
+          <div class="work-footer"><span class="mono">chat.deepseek.com / share</span><strong>阅读完整对话 ↗</strong></div>
+        </a>
+      </div>
+      <p class="work-footnote"><span aria-hidden="true">※</span><span>两份示例链接由作者提供，托管于 DeepSeek；本网站不复制对话内容。外部分享页的可访问性与内容展示由原平台决定。</span></p>
+    </section>
+
+    <section class="bottom-cta wrap" id="about" aria-labelledby="about-title">
+      <div class="cta-shell">
+        <div>
+          <span class="section-kicker mono">A NOTE FROM THE STUDIO</span>
+          <h2 id="about-title">少一点模板味。<br>多一点不可替代。</h2>
+          <p>角色炼化目前以理念、结构与实际对话示例的极简形式呈现。这里的目标不是创造一张万能人格卡，而是探索如何更准确地保存角色的表达与行为特征。</p>
+        </div>
+        <a href="#works" class="btn primary">回到作品预览 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-grid wrap">
+      <div><a class="footer-title" href="#home">角色炼化 <span class="mono" style="color:var(--soft);font-size:10px">/ PERSONA DISTILL</span></a><p class="footer-detail">极简概念展示 · 不代表在线炼化服务已经开放</p></div>
+      <div class="footer-links"><a href="#principles">理念</a><a href="#process">方法</a><a href="#works">作品</a><a href="https://github.com/leomedit3r-droid/leomedit3r-droid.github.io" target="_blank" rel="noopener noreferrer">网站源码 ↗</a><span>© <span id="year">2026</span></span></div>
+    </div>
+  </footer>
+</body>
+</html>
