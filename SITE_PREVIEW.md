@@ -1,26 +1,42 @@
-# Personal Homepage v1 — Standalone Preview
+# 角色炼化 / Persona Distill — 极简网站预览
 
-This branch introduces a new, responsive personal homepage based on the existing GitHub Pages repository.
+这是一份建立在原有 GitHub Pages 仓库之上的角色炼化产品**概念展示网站**。它不依赖后端，没有在线角色炼化服务，也不暗示真实角色对话已经内嵌在网站里。
 
-## What was added
-- `index.html`: dependency-free single-file website, with Projects / About / Notes sections.
-- Responsive navigation, light/dark theme switch, basic metadata, reduced-motion support and keyboard access.
-- Only public GitHub links are included. No fabricated project details or articles were added.
+## 页面结构
 
-## What was deliberately preserved
-- The existing Hexo 7.3 project, `_config.yml`, `source/`, `public/`, posts and theme files.
-- The current `main` branch and any existing deployment.
+- **首页**：「让角色，更像自己」与一张人格指纹结构示意图。图中 VOICE / BEHAVIOR / CORE 为结构示意，**并非真实生成的人格卡**。
+- **理念**：语言指纹、关系边界、价值和行为决策。
+- **方法**：原作锚点 → 表中深分层提炼 → 极简封装与校验。
+- **作品预览**：提供作者给出的两份 DeepSeek 原始分享对话的外部链接。
+- **关于**：清楚标明当前是概念与示例预览，非上线的在线产品。
 
-## Local preview
-Download or checkout the branch and open `index.html` in your browser. No package installation or server is needed.
+## 两份公开作品链接
 
-## Publishing to GitHub Pages
-This is **not yet published**. Merging this branch creates a root-level `index.html`; it becomes the homepage if GitHub Pages is configured to publish from `main / (root)`.
+1. https://chat.deepseek.com/share/wrhd0bd8jqmj3z5mjm
+2. https://chat.deepseek.com/share/c2l21x4nznauhoktkh
 
-Check repository **Settings → Pages** before publishing. The existing Hexo `_config.yml` also has a `deploy` target of `main`; running `hexo deploy` may overwrite files on that branch. Decide whether the site should use the standalone homepage or the Hexo deployment pipeline before enabling automatic publishing.
+因为两个 DeepSeek 分享页面无法通过当前资料抓取工具可靠读取其正文，所以网站将它们中性标注为「实例一」和「实例二」，**没有猜测人物名称、对话情节或未经验证的测试成绩**。外部平台是否能打开，依赖于其服务与分享权限。
 
-## Notes for a future Sites import
-Use the committed `index.html` as the starting design/reference. This branch was created through GitHub, not through a Sites project API, and does not claim a Sites site was created.
+## 文件
 
-## Easy rollback
-This work lives in `sites/personal-homepage-v1`. Until merged, deleting the branch leaves the original site unchanged. If merged, revert the PR commit to restore the previous main branch behavior.
+- `index.html` — 网站语义化 HTML 和内容。
+- `assets/site.css` — 响应式布局、品牌设计、深/浅色主题、减少动态效果支持。
+- `assets/site.js` — 主题选择持久化、移动导航与键盘菜单交互。
+
+### 本地预览
+
+下载分支并在浏览器中打开 `index.html`，或使用任意静态文件服务器（例如 `python -m http.server 8000`），无需 `npm install`。网络仅用于打开 GitHub / DeepSeek 外部链接。
+
+### 发布注意
+
+此 PR **尚未发布**到 Sites 或 GitHub Pages。当前的 `main` 保留 Hexo 7.3 原始结构及部署配置。合并前需要检查 **Settings → Pages** 所选发布来源；若采用 `main/(root)`，根目录中的 `index.html` 可以作为主页。现有 `_config.yml` 的 Hexo deploy 指向 `main`，如果运行 `hexo deploy` 可能覆盖该静态站点，必须先选定唯一的发布流水线。
+
+此分支不依赖 `node_modules`，也没有改动 Hexo 原有配置与文章。
+
+### 回滚
+
+未合并时删除分支即可；合并后可 revert PR commit 回滚网站变更。
+
+## 后续改进
+
+如获得两份分享页的全文和角色名称，可将目前中性的「实例一」「实例二」替换成确切角色案例、摘要、关键角色指纹对照。上线前建议用真实浏览器做桌面/移动端视觉与无障碍测试。
