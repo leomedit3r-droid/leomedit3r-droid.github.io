@@ -1,4 +1,4 @@
-name: Deploy Persona Distill to GitHub Pages
+name: Validate Persona Distill
 
 on:
   push:
@@ -6,25 +6,16 @@ on:
     paths:
       - 'index.html'
       - 'assets/**'
-      - '.nojekyll'
+      - '_config.yml'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: github-pages
-  cancel-in-progress: false
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
@@ -47,22 +38,4 @@ jobs:
           grep -q 'chatglm.cn/share/3FpWIqnX' index.html
           grep -q 'chatglm.cn/share/0FpNIrvZ' index.html
           grep -q 'chatglm.cn/share/6FpDIrgS' index.html
-
-      - name: Prepare public site
-        run: |
-          mkdir -p _site
-          cp index.html _site/index.html
-          cp -R assets _site/assets
-          touch _site/.nojekyll
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: _site
-
-      - name: Deploy Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          ! grep -q 'theme: landscape' _config.yml
