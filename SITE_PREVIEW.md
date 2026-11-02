@@ -38,20 +38,19 @@
 - `index.html` — 页面内容与语义化结构。
 - `assets/site.css` — 响应式布局、主题与视觉样式。
 - `assets/site.js` — 主题切换、移动导航交互。
-- `.github/workflows/pages.yml` — 唯一的 GitHub Pages 发布工作流。
+- `_config.yml` — GitHub Pages 使用的 Jekyll 配置。
+- `.github/workflows/pages.yml` — 只做资源与链接检查，不负责部署。
 
 ## 构建与发布
 
-本站由 GitHub Actions 发布，而不是 Hexo 生成：
+仓库的 GitHub Pages 发布来源是 `main` 分支根目录，使用 GitHub Pages 自动生成的 Jekyll 工作流：
 
-1. 向 `main` 推送页面、资源或 Pages 工作流改动。
-2. 工作流检查页面与关键资源是否存在，并校验七个公开分享链接。
-3. 工作流把根目录的 `index.html` 和 `assets/` 复制到发布目录。
-4. 通过 `actions/deploy-pages` 发布到 GitHub Pages。
+1. 向 `main` 推送页面、资源或配置改动。
+2. GitHub Pages 自动运行 `pages build and deployment`。
+3. Jekyll 读取根目录的 `index.html`、`assets/` 和本文件中的配置并发布。
+4. 独立的 `Validate Persona Distill` 工作流检查七个分享链接与关键资源，不执行第二次部署。
 
-也可在 GitHub Actions 页面手动运行 `Deploy Persona Distill to GitHub Pages`。
-
-仓库保留了早期 Hexo 文件作为历史脚手架，但 `_config.yml` 中的 Hexo Git 部署器已禁用。**不要运行 `hexo deploy` 或 `npm run deploy`**；发布统一由上述 Actions 工作流完成。
+早期 Hexo 文件作为历史脚手架保留，但已从公开构建中排除。Hexo Git 部署配置已经移除；**不要运行 `hexo deploy` 或 `npm run deploy`**。
 
 ## 本地预览
 
@@ -65,4 +64,4 @@ python -m http.server 8000
 
 ## 回滚
 
-网站发布由 GitHub Actions 记录。若新版本异常，可在 GitHub 上 revert 对应的 `main` 合并提交，工作流会自动重新发布回滚后的版本。
+若新版本异常，可在 GitHub 上 revert 对应的 `main` 提交。Pages 自动构建会重新发布回滚后的版本。
