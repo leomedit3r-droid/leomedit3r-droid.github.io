@@ -1,4 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="750" height="750" viewBox="0 0 750 750">
-    <rect width="750" height="750" fill="#8B4513"/>
-    <text x="375" y="375" font-family="sans-serif" font-size="50" fill="white" text-anchor="middle" dominant-baseline="middle">爱弥斯 官方立绘</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="750" viewBox="0 0 750 750" role="img" aria-labelledby="title desc">
+  <title id="title">爱弥斯 · 角色炼化视觉占位图</title>
+  <desc id="desc">原创抽象视觉设计，尚未添加角色立绘。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#171526"/><stop offset="1" stop-color="#382b3d"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#d7b77a" stop-opacity=".34"/><stop offset="1" stop-color="#d7b77a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2d9a0"/><stop offset="1" stop-color="#a88bd1"/></linearGradient>
+  </defs>
+  <rect width="750" height="750" rx="28" fill="url(#bg)"/>
+  <circle cx="375" cy="310" r="250" fill="url(#halo)"/>
+  <g fill="none" stroke="url(#line)" stroke-width="2" opacity=".78">
+    <circle cx="375" cy="310" r="188"/>
+    <circle cx="375" cy="310" r="150" stroke-dasharray="3 12"/>
+    <ellipse cx="375" cy="310" rx="92" ry="188" transform="rotate(35 375 310)"/>
+    <ellipse cx="375" cy="310" rx="92" ry="188" transform="rotate(-35 375 310)"/>
+    <path d="M375 90V530M155 310H595"/>
+  </g>
+  <g fill="#f2d9a0">
+    <circle cx="375" cy="122" r="6"/><circle cx="563" cy="310" r="5"/><circle cx="375" cy="498" r="6"/><circle cx="187" cy="310" r="5"/>
+    <path d="M375 236l12 24 26 4-19 18 5 26-24-13-24 13 5-26-19-18 26-4z" opacity=".9"/>
+  </g>
+  <g text-anchor="middle" font-family="sans-serif">
+    <text x="375" y="592" fill="#f4e8d2" font-size="58" letter-spacing="8">爱弥斯</text>
+    <text x="375" y="640" fill="#d8c49e" font-size="17" letter-spacing="5">PERSONA STUDY / 007</text>
+    <text x="375" y="681" fill="#b5a9bd" font-size="16" letter-spacing="2">角色立绘待补充 · ABSTRACT COVER</text>
+  </g>
 </svg>
