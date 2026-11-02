@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: 角色炼化 / Persona Distill
+subtitle: '让角色更像自己'
+description: '从原作剧情、语音与行为中提炼人格指纹。'
+keywords: 角色炼化, Persona Distill, 人格卡, 角色一致性
+author: Persona Distill
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://leomedit3r-droid.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -99,8 +99,5 @@ ignore:
 theme: landscape
 
 # Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://github.com/leomedit3r-droid/leomedit3r-droid.github.io.git
-  branch: main
+# Publishing is intentionally handled only by .github/workflows/pages.yml.
+# Do not run "hexo deploy": it would overwrite the static Pages source branch.
