@@ -1,4 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="750" height="750" viewBox="0 0 750 750">
-    <rect width="750" height="750" fill="#4B0082"/>
-    <text x="375" y="375" font-family="sans-serif" font-size="50" fill="white" text-anchor="middle" dominant-baseline="middle">长夜月 官方立绘</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="750" viewBox="0 0 750 750" role="img" aria-labelledby="title desc">
+  <title id="title">长夜月 · 角色炼化视觉占位图</title>
+  <desc id="desc">原创抽象月夜视觉设计，尚未添加角色立绘。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#11182a"/><stop offset="1" stop-color="#28213c"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#a9b8ed" stop-opacity=".28"/><stop offset="1" stop-color="#a9b8ed" stop-opacity="0"/></radialGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0e8d6"/><stop offset="1" stop-color="#a6b5df"/></linearGradient>
+  </defs>
+  <rect width="750" height="750" rx="28" fill="url(#bg)"/>
+  <circle cx="375" cy="300" r="260" fill="url(#glow)"/>
+  <g fill="none" stroke="#9caedc" opacity=".48">
+    <circle cx="375" cy="300" r="220" stroke-dasharray="2 14"/>
+    <circle cx="375" cy="300" r="178"/>
+    <path d="M105 300H645M375 30V570"/>
+    <path d="M180 110L570 500M570 110L180 500" opacity=".45"/>
+  </g>
+  <path d="M421 142c-91 29-133 129-93 216 34 75 119 111 194 82-34 62-103 103-181 96-111-10-193-108-183-219 10-111 108-193 219-183 15 1 30 4 44 8z" fill="url(#moon)" opacity=".9"/>
+  <g fill="#e3e8fb">
+    <circle cx="190" cy="178" r="4"/><circle cx="554" cy="202" r="5"/><circle cx="540" cy="438" r="3"/><circle cx="235" cy="466" r="4"/>
+    <path d="M536 115l7 18 18 7-18 7-7 18-7-18-18-7 18-7z"/>
+    <path d="M167 350l5 13 13 5-13 5-5 13-5-13-13-5 13-5z" opacity=".75"/>
+  </g>
+  <g text-anchor="middle" font-family="sans-serif">
+    <text x="375" y="592" fill="#eef0fa" font-size="58" letter-spacing="8">长夜月</text>
+    <text x="375" y="640" fill="#b9c4e6" font-size="17" letter-spacing="5">PERSONA STUDY / 006</text>
+    <text x="375" y="681" fill="#aab1c8" font-size="16" letter-spacing="2">角色立绘待补充 · ABSTRACT COVER</text>
+  </g>
 </svg>
