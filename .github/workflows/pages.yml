@@ -37,8 +37,16 @@ jobs:
           test -s assets/characters/suoming.webp
           test -s assets/characters/xilian.webp
           test -s assets/characters/alipay-qr.jpg
+          test -s assets/characters/sanyueqi.png
+          test -s assets/characters/changyeyue.svg
+          test -s assets/characters/aimisi.svg
           grep -q 'chat.deepseek.com/share/wrhd0bd8jqmj3z5mjm' index.html
           grep -q 'chat.deepseek.com/share/c2l21x4nznauhoktkh' index.html
+          grep -q 'chatglm.cn/share/IFpaIqlL' index.html
+          grep -q 'chatglm.cn/share/NFpnIqT4' index.html
+          grep -q 'chatglm.cn/share/3FpWIqnX' index.html
+          grep -q 'chatglm.cn/share/0FpNIrvZ' index.html
+          grep -q 'chatglm.cn/share/6FpDIrgS' index.html
 
       - name: Prepare public site
         run: |
