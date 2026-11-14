@@ -1,15 +1,19 @@
 # Robinleo Atlas — maintenance handoff
 
-## Build
-The public root is a static GitHub Pages / Jekyll site. Generate all three language editions with `node museum-build.cjs`; content lives in `data/museum.json`. The generated HTML is committed, so Pages needs no additional Node build.
-Legacy Hexo files are unchanged and excluded from the published site by Jekyll. The existing character exhibit is at /persona-distill/; old root anchors redirect there. Its original seven shares and support assets are preserved.
+## Build and navigation
+- GitHub Pages / Jekyll static site; run `node museum-build.cjs` and `node museum-validate.cjs` before committing.
+- Main content: `data/museum.json` and `data/museum-editorial.json`. Three language editions are generated and committed.
+- `museum-qingming.cjs` defines the Qingming screening room and the exact 27-clip catalog. The JavaScript uses one video player with explicit user-controlled playback.
+- The original Persona Distill exhibit remains at `/persona-distill/`; legacy root anchors redirect there. Its seven share links, original sponsor section, and original QR image are unchanged.
+- Each generated page ends with a voluntary sponsorship link to `/persona-distill/#support`. No additional payment flow or payment processor is introduced.
 
-## Content and release policy
-- Screenshots in assets/museum are development captures; no game release or playable download is implied.
-- Never add private repository links, credentials, unapproved third-party assets, private notebook contents, draft chapters or restricted promotional media to the public repository (including branches).
-- Short quotations from the selected notebook are marked as direct excerpts or distilled statements. Other languages are translations.
-- Add projects or translations to data/museum.json and regenerate. Use image files only after review; use WebP and meaningful alternative text.
-- Review video rights before adding any publicly playable recording. The current first release includes images, not a video library.
-- Maintain all three language versions and retain legacy URLs.
+## Content and publication boundaries
+- Public content: selected original/approved work, curated notebook excerpts (labeled as quotations or distilled ideas), and owner-approved Qingming exhibition footage.
+- Qingming: 27 video-only MP4s (8 panoramic long-scroll weather clips, 8 Rainbow Bridge weather clips, 8 seasonal day/night views, 3 cinematic clips) and 27 WebP posters in `assets/museum/qingming/`. Public web copies retain video streams and omit all audio, including the thunder clip's original audio. No private source repository, APK, private notes, or collaboration documentation is published.
+- The Qingming source project is a 3D artistic interpretation, not a museum-endorsed work or a released game. The original private evaluation snapshot remains private.
+- Review rights and source provenance before adding other media. Do not copy private repository links, secrets, third-party assets without permission, or entire private notebooks into public pages.
+- Keep the three languages consistent, and preserve existing URLs.
+
 ## Verification
-Local Playwright against a static HTTP server: 33 page / viewport checks across desktop, mobile and tablet, image lightbox, theme toggle and old anchor redirect. This is local preview verification, not an online deployment. External share availability has not been verified.
+- Deterministic generation and static route/asset checks are enforced by the Pages CI workflow.
+- Local browser tests cover desktop, mobile, tablet, multilingual navigation, project filtering, quote controls, galleries, the Qingming screening controls and original sponsor QR.

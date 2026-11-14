@@ -25,3 +25,5 @@ exclude:
 
   - museum-validate.cjs
   - HANDOFF.md
+
+  - museum-qingming.cjs

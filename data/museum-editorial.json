@@ -221,6 +221,16 @@
       "Eight impressionist-style digital paintings. Light, heterochromia and quiet everyday moments.",
       "印象派風のデジタル絵画8点。光、オッドアイ、穏やかな日常。",
       "cats/cat-01.webp"
+    ],
+    [
+      "art/qingming",
+      "清明上河圖 · 汴京長卷",
+      "Qingming · Bianjing in motion",
+      "清明上河図・汴京長巻",
+      "宋代城市的三維藝術演繹。27 段長卷、虹橋、四季晝夜與電影實機影像。",
+      "A 3D artistic interpretation of Song-dynasty urban life. 27 scroll, bridge, seasonal and cinematic development clips.",
+      "宋代都市の3D芸術的再解釈。長巻、虹橋、四季昼夜、短編映像の全27本。",
+      "qingming/bridge-spring-clear.webp"
     ]
   ],
   "details": {
@@ -453,6 +463,16 @@
     ]
   },
   "journal": [
+    [
+      "2026-11-15",
+      "清明上河圖 · 影像入館",
+      "Qingming · screening room",
+      "清明上河図・映像館",
+      "27 段實機影像整理入館，四季、晴陰與晝夜可切換。",
+      "27 in-engine clips curated, with seasonal, weather and day/night selections.",
+      "実機映像27本を収録。四季、晴曇、昼夜を選択可能。",
+      "art/qingming"
+    ],
     [
       "2026-11-15",
       "CrossRealm 水体视觉",

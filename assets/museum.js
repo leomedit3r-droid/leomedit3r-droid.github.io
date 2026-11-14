@@ -22,3 +22,37 @@ let last=-1;document.querySelector('#random-quote')?.addEventListener('click',()
 function hash(){if(location.pathname==='/'&&['#home','#principles','#process','#works','#about','#support'].includes(location.hash)){location.replace('/persona-distill/'+location.hash);return}if(location.hash.startsWith('#quote-')){const q=document.getElementById(location.hash.slice(1));if(q?.hidden)filterQuotes('all');q?.scrollIntoView({block:'center'})}}
 hash();addEventListener('hashchange',hash);
 })();
+
+/* Qingming: one active video, explicit user playback, no game runtime. */
+(()=>{
+const p=document.querySelector('[data-qm-player]');if(!p)return;
+const $=s=>p.querySelector(s),$$=s=>[...p.querySelectorAll(s)],v=$('[data-qm-video]'),stage=$('[data-qm-stage]'),lang=document.documentElement.lang,L=(zh,en,ja)=>lang==='ja'?ja:lang==='en'?en:zh;
+const root='/assets/museum/qingming/',state={mode:'bridge',season:'spring',weather:'clear',light:'day',film:'river'};
+const buttonText=(a,k)=>p.querySelector('['+a+'="'+k+'"]')?.textContent.trim()||k;
+const press=(a,k)=>$$('['+a+']').forEach(b=>b.setAttribute('aria-pressed',String(b.getAttribute(a)===k)));
+const show=(a,on)=>{$('['+a+']').hidden=!on};
+const status=t=>{$('[data-qm-status]').textContent=t};
+const id=()=>state.mode==='film'?'film-'+state.film:state.mode+'-'+state.season+'-'+(state.mode==='wide'?state.light:state.weather);
+function sync(){
+for(const k of ['mode','season','weather','light','film'])press('data-qm-'+k,state[k]);
+const scroll=state.mode==='scroll',film=state.mode==='film',wide=state.mode==='wide';
+show('data-qm-season-row',!film);show('data-qm-weather-row',!film&&!wide);show('data-qm-light-row',wide);show('data-qm-film-row',film);show('data-qm-pan-row',scroll);
+stage.classList.toggle('is-scroll',scroll);stage.classList.remove('is-overview');stage.scrollLeft=0;$('[data-qm-pan]').value=0;$('[data-qm-pan]').disabled=false;$('[data-qm-overview]').setAttribute('aria-pressed','false');
+v.controls=!scroll;v.pause();v.src=root+id()+'.mp4';v.poster=root+id()+'.webp';v.load();
+$('[data-qm-direct]').href=root+id()+'.mp4';
+$('[data-qm-title]').textContent=film?buttonText('data-qm-film',state.film):[buttonText('data-qm-mode',state.mode),buttonText('data-qm-season',state.season),buttonText(wide?'data-qm-light':'data-qm-weather',wide?state.light:state.weather)].join(' · ');
+$('[data-qm-seek]').value=0;status('');
+}
+for(const k of ['mode','season','weather','light','film'])$$('[data-qm-'+k+']').forEach(b=>b.addEventListener('click',()=>{state[k]=b.getAttribute('data-qm-'+k);sync()}));
+function choose(clip){const a=clip.split('-');state.mode=a[0];if(a[0]==='film')state.film=a[1];else {state.season=a[1];state[a[0]==='wide'?'light':'weather']=a[2]}sync()}
+$$('[data-qm-clip]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();choose(a.dataset.qmClip);stage.scrollIntoView({block:'center'})}));
+document.querySelectorAll('[data-qm-pick]').forEach(a=>a.addEventListener('click',()=>choose('film-'+a.dataset.qmPick)));
+$('[data-qm-play]').addEventListener('click',()=>{if(v.paused)v.play().catch(()=>status(L('播放未成功，請使用「開啟影片」。','Playback could not start. Use Open video.','再生できない場合は動画を開いてください。')));else v.pause()});
+const playLabel=()=>{$('[data-qm-play]').textContent=v.paused?L('播放','Play','再生'):L('暫停','Pause','一時停止')};
+v.addEventListener('play',playLabel);v.addEventListener('pause',playLabel);v.addEventListener('ended',playLabel);
+$('[data-qm-full]').addEventListener('click',async()=>{try{if(v.requestFullscreen)await v.requestFullscreen();else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();else status(L('此瀏覽器不支援全螢幕，請開啟影片。','Fullscreen unavailable. Open the video instead.','全画面非対応。動画を開いてください。'))}catch{status(L('無法全螢幕，請開啟影片。','Fullscreen unavailable. Open the video instead.','全画面非対応。動画を開いてください。'))}});
+const pan=$('[data-qm-pan]');pan.addEventListener('input',()=>{stage.scrollLeft=(stage.scrollWidth-stage.clientWidth)*Number(pan.value)/100});stage.addEventListener('scroll',()=>{const max=stage.scrollWidth-stage.clientWidth;pan.value=max>0?100*stage.scrollLeft/max:0});
+$('[data-qm-overview]').addEventListener('click',e=>{const on=stage.classList.toggle('is-overview');e.currentTarget.setAttribute('aria-pressed',String(on));stage.scrollLeft=0;pan.value=0;pan.disabled=on});
+const seek=$('[data-qm-seek]');seek.addEventListener('input',()=>{if(Number.isFinite(v.duration))v.currentTime=Number(seek.value)/100*v.duration});v.addEventListener('timeupdate',()=>{if(Number.isFinite(v.duration)&&v.duration>0)seek.value=100*v.currentTime/v.duration});
+v.addEventListener('error',()=>{if(v.error)status(L('影片載入失敗，請重新選片或開啟影片。','Video unavailable. Try another clip or open it directly.','動画の読み込みに失敗しました。別の映像を選択してください。'))});
+})();
