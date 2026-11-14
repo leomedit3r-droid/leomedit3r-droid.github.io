@@ -1,0 +1,166 @@
+{
+    "nav":  [
+                [
+                    "",
+                    "首页",
+                    "Home",
+                    "ホーム"
+                ],
+                [
+                    "games",
+                    "游戏",
+                    "Games",
+                    "ゲーム"
+                ],
+                [
+                    "art",
+                    "艺术",
+                    "Art",
+                    "アート"
+                ],
+                [
+                    "lab",
+                    "实验室",
+                    "Lab",
+                    "ラボ"
+                ],
+                [
+                    "writing",
+                    "文学",
+                    "Writing",
+                    "文学"
+                ],
+                [
+                    "thoughts",
+                    "思想",
+                    "Notes",
+                    "思想"
+                ],
+                [
+                    "about",
+                    "关于",
+                    "About",
+                    "紹介"
+                ]
+            ],
+    "projects":  [
+                     [
+                         "games/crossrealm",
+                         "CrossRealm",
+                         "CrossRealm",
+                         "CrossRealm",
+                         "体素战略与城市经营。真实资源、运输、生产与交付构成世界的规则。",
+                         "Voxel strategy and city building, with resource, transport, production and delivery systems.",
+                         "ボクセル戦略・都市経営。資源・輸送・生産・納品が世界のルールを形作る。",
+                         "ref5.webp"
+                     ],
+                     [
+                         "games/taixu",
+                         "太虚·梦觉录",
+                         "Taixu: Dream Awakening",
+                         "太虚・夢覚録",
+                         "中式轮回恐怖人生模拟。每一次轮回，都可能让你更远离自己。",
+                         "A Chinese-inspired reincarnation life simulation about the horror of losing oneself.",
+                         "輪廻を繰り返す人生シミュレーション。自己を失う恐怖を描く。",
+                         ""
+                     ],
+                     [
+                         "art/persona",
+                         "角色炼化",
+                         "Persona Distill",
+                         "ペルソナ精錬",
+                         "从剧情、语音与行为提炼人格指纹。七份公开作品。",
+                         "Distill identity from dialogue, voice and behavior. Seven public examples.",
+                         "物語・声・行動から人格を抽出。7つの公開事例。",
+                         "/assets/characters/suoming.webp"
+                     ],
+                     [
+                         "lab/webharness",
+                         "WebHarness",
+                         "WebHarness",
+                         "WebHarness",
+                         "浏览器端 Agent 工具协作、审批与执行日志。",
+                         "Browser-based agent tooling, approvals and execution logs.",
+                         "ブラウザ型エージェントのツール連携・承認・実行ログ。",
+                         ""
+                     ],
+                     [
+                         "lab/agents",
+                         "AI 协作工程",
+                         "AI Engineering",
+                         "AI協働開発",
+                         "主 Agent 架构与验收，子 Agent 调研与测试，MCP 执行与证据闭环。",
+                         "Lead-agent architecture and acceptance, specialist research and testing, MCP execution and evidence.",
+                         "主エージェントの設計・検証、専門エージェントの調査・テスト、MCP実行と証拠。",
+                         ""
+                     ],
+                     [
+                         "writing/bridge",
+                         "断桥说蛇",
+                         "Serpent at the Broken Bridge",
+                         "断橋説蛇",
+                         "以西湖与传统叙事为创作空间。已有卷一至六大纲，正文仍在创作。",
+                         "Long-form fiction inspired by West Lake and traditional storytelling. Volumes 1–6 outlined; prose in progress.",
+                         "西湖と伝統的な物語を舞台にした長編。第1〜6巻の構成案を作成、本文執筆中。",
+                         ""
+                     ],
+                     [
+                         "writing/human",
+                         "发现人类",
+                         "Discovering Humanity",
+                         "人類を発見する",
+                         "当 AI 内容淹没互联网，真实的人类逐渐成为稀有身份。",
+                         "When AI floods the internet, being human becomes a rare identity.",
+                         "AIがネットを覆い、人間であることが希少な属性になる。",
+                         ""
+                     ],
+                     [
+                         "writing/housing",
+                         "我不是房神",
+                         "I Am Not a Housing God",
+                         "私は住宅の神ではない",
+                         "深圳现实主义群像，关注日常、制度与人情。",
+                         "Shenzhen ensemble fiction about daily life, institutions and human relationships.",
+                         "深圳の群像小説。日常、制度、人間関係を描く。",
+                         ""
+                     ]
+                 ],
+    "quotes":  [
+                   [
+                       "宇宙根本不必理解和证明自己。",
+                       "The universe need not understand or prove itself.",
+                       "宇宙は自らを理解し、証明する必要はない。",
+                       "科学成果必须可被人类理解吗 · 2026-10-29 · 原话",
+                       "Must scientific results be understandable? · 2026-10-29 · translation",
+                       "科学成果は理解可能でなければならないか・2026-10-29・翻訳"
+                   ],
+                   [
+                       "恐怖来自正常的缓慢消失。",
+                       "Horror lies in the slow disappearance of normality.",
+                       "恐怖は、日常がゆっくり消えること。",
+                       "世态驱动的写作方法论 · 提炼",
+                       "Social-state-driven writing · distilled",
+                       "世態駆動の創作方法論・要約"
+                   ]
+               ],
+    "media":  [
+                  [
+                      "ref5.webp",
+                      "Ref5 · 水深与物理",
+                      "Ref5 · depth and physics",
+                      "Ref5・水深と物理"
+                  ],
+                  [
+                      "ref3.webp",
+                      "Ref3 · 金色反射",
+                      "Ref3 · golden reflections",
+                      "Ref3・金色の反射"
+                  ],
+                  [
+                      "caustics.webp",
+                      "B12 · 水面焦散",
+                      "B12 · water caustics",
+                      "B12・水面コースティクス"
+                  ]
+              ]
+}
