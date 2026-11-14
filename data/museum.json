@@ -161,6 +161,24 @@
                       "B12 · 水面焦散",
                       "B12 · water caustics",
                       "B12・水面コースティクス"
+                  ],
+                  [
+                      "ref1.webp",
+                      "Ref1 · 天窗折射",
+                      "Ref1 · skylight refraction",
+                      "Ref1・天窓の屈折"
+                  ],
+                  [
+                      "ref2.webp",
+                      "Ref2 · 宽池反射",
+                      "Ref2 · wide pool reflections",
+                      "Ref2・広い水面の反射"
+                  ],
+                  [
+                      "ref4.webp",
+                      "Ref4 · 水下阶梯",
+                      "Ref4 · submerged steps",
+                      "Ref4・水中階段"
                   ]
               ]
 }

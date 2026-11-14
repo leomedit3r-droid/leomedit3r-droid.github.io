@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path');
-const d=JSON.parse(fs.readFileSync('data/museum.json','utf8'));
+const base=JSON.parse(fs.readFileSync('data/museum.json','utf8')),ed=JSON.parse(fs.readFileSync('data/museum-editorial.json','utf8')); const d={...base,nav:[...base.nav,...ed.sections],projects:[...base.projects,...ed.projects]};
 const sections=d.nav.map(x=>x[0]);const slugs=d.projects.filter(x=>x[0]!=='art/persona').map(x=>x[0]);
 const routes=['','en','ja'].flatMap(lang=>[...sections,...slugs].map(s=>'/'+[lang,s].filter(Boolean).join('/')+([lang,s].filter(Boolean).length?'/':'')));
 routes.push('/persona-distill/');
