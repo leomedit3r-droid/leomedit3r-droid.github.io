@@ -17,3 +17,8 @@
 ## Verification
 - Deterministic generation and static route/asset checks are enforced by the Pages CI workflow.
 - Local browser tests cover desktop, mobile, tablet, multilingual navigation, project filtering, quote controls, galleries, the Qingming screening controls and original sponsor QR.
+
+## Editorial direction — 2026-11-15
+- Home centers cognitive sovereignty, practice, and freedom rather than academic credentials. SUSTech remains on the About page as personal experience.
+- `/method/` and its English/Japanese equivalents connect Zhuangzi readings to knowledge, authority, education, and iterative creation. New wording and personal interpretations are labeled; private source files are not linked publicly.
+- The thought index retains original entries and adds verified discussion excerpts and editorial slogans. Keep the source/translation distinction when editing.
