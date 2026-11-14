@@ -1,6 +1,6 @@
 # GitHub Pages / Jekyll configuration
-title: 角色炼化 / Persona Distill
-description: 从原作剧情、语音与行为中提炼人格指纹。
+title: Robinleo Atlas
+description: Independent creator and digital museum
 url: https://leomedit3r-droid.github.io
 lang: zh-CN
 markdown: kramdown
@@ -18,3 +18,12 @@ exclude:
   - SITE_PREVIEW.md
   - README.md
   - .deploy_git
+
+  - museum-build.cjs
+  - data
+  - docs
+
+  - museum-validate.cjs
+  - HANDOFF.md
+
+  - museum-qingming.cjs

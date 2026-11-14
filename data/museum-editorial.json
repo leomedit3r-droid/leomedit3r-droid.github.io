@@ -1,0 +1,754 @@
+{
+  "sections": [
+    [
+      "projects",
+      "作品索引",
+      "Archive",
+      "作品アーカイブ"
+    ],
+    [
+      "gallery",
+      "影像馆",
+      "Screening room",
+      "映像館"
+    ],
+    [
+      "journal",
+      "创作日志",
+      "Studio journal",
+      "制作日誌"
+    ],
+    [
+      "apps",
+      "应用",
+      "Apps",
+      "アプリ"
+    ],
+    [
+      "method",
+      "方法论",
+      "Method",
+      "方法論"
+    ]
+  ],
+  "quotes": [
+    [
+      "science",
+      "宇宙根本不必理解和证明自己。",
+      "The universe need not understand or prove itself.",
+      "宇宙は自らを理解し、証明する必要はない。",
+      "《科学成果必须可被人类理解吗》· 原话节选",
+      "Scientific understanding · direct excerpt",
+      "科学的理解・原文抜粋"
+    ],
+    [
+      "science",
+      "没有边界，一个理论会迅速溃败。",
+      "Without boundaries, a theory quickly collapses.",
+      "境界を失えば、理論はたちまち崩れる。",
+      "《科学方法的适用边界》· 原话节选整理",
+      "Limits of scientific method · edited excerpt",
+      "科学的方法の限界・抜粋編集"
+    ],
+    [
+      "science",
+      "有效性不等于支配权。",
+      "Effectiveness is not the right to rule.",
+      "有効性は支配権ではない。",
+      "《从杨朱到注意力与认知主权》· 提炼",
+      "Cognitive sovereignty · distilled",
+      "認知の主権・要約"
+    ],
+    [
+      "agency",
+      "知识可以无限，生命不能。",
+      "Knowledge can be infinite. Life cannot.",
+      "知は無限でも、命は有限だ。",
+      "《从杨朱到注意力与认知主权》· 提炼",
+      "Attention and cognitive sovereignty · distilled",
+      "注意と認知の主権・要約"
+    ],
+    [
+      "agency",
+      "慈善并不是给物质，而是给选择，拆墙。",
+      "Charity is not giving things. It is giving choices, tearing down walls.",
+      "慈善とは物を与えることではなく、選択肢を与え、壁を壊すことだ。",
+      "《慈善不是施舍，而是拆墙》· 原话",
+      "Charity and choice · direct quote",
+      "慈善と選択・原文"
+    ],
+    [
+      "agency",
+      "允许现实纠正思想，允许制度纠正权力。",
+      "Let reality correct ideas, and institutions correct power.",
+      "現実が思想を、制度が権力を正す。",
+      "《制度由行动塑造》· 讨论归纳",
+      "Institutions shaped by action · distilled",
+      "行動が制度を形作る・要約"
+    ],
+    [
+      "creation",
+      "恐怖来自正常的缓慢消失。",
+      "Horror lies in the slow disappearance of normality.",
+      "恐怖は日常がゆっくり消えること。",
+      "《世态驱动的写作方法论》· 提炼",
+      "Social-state-driven writing · distilled",
+      "世態駆動の創作方法論・要約"
+    ],
+    [
+      "creation",
+      "把时代写成主角。",
+      "Make the era the protagonist.",
+      "時代を主人公にする。",
+      "《世态驱动的写作方法论》· 小节标题节选",
+      "Social-state-driven writing · section excerpt",
+      "世態駆動の創作方法論・節題抜粋"
+    ],
+    [
+      "creation",
+      "力量是坐标，代价是摩擦。",
+      "Power is a coordinate; cost is friction.",
+      "力は座標、代償は摩擦。",
+      "WorldForge Lite · 设计原文",
+      "WorldForge Lite · design excerpt",
+      "WorldForge Lite・設計原文"
+    ],
+    [
+      "world",
+      "世界独立运行，玩法自由组合，意志可以委托。",
+      "The world runs independently. Play combines freely. Agency can be delegated.",
+      "世界は自律し、遊びは組み合わさり、意志は委ねられる。",
+      "CrossRealm 方法论 · 元规则",
+      "CrossRealm methodology · design principle",
+      "CrossRealm 方法論・基本原則"
+    ],
+    [
+      "world",
+      "成长扩大选择，而非义务。",
+      "Growth expands choices, not obligations.",
+      "成長は義務ではなく、選択肢を広げる。",
+      "CrossRealm 方法论 · 提炼",
+      "CrossRealm methodology · distilled",
+      "CrossRealm 方法論・要約"
+    ],
+    [
+      "world",
+      "委托是行为分工，不是结果保证。",
+      "Delegation divides work, not guarantees outcomes.",
+      "委任は行動の分担であり、結果の保証ではない。",
+      "CrossRealm 方法论 · 原文",
+      "CrossRealm methodology · design excerpt",
+      "CrossRealm 方法論・原文"
+    ],
+    [
+      "ai",
+      "更高的分数，不等于更广的可能性。",
+      "Higher scores do not mean broader possibilities.",
+      "高いスコアは、可能性の広さを意味しない。",
+      "《开放性、耗散与生成秩序》· 研究假说提炼",
+      "Open systems and generative order · hypothesis distilled",
+      "開放性と生成秩序・仮説の要約"
+    ],
+    [
+      "agency",
+      "行动本身就是在塑造世界。",
+      "Action itself shapes the world.",
+      "行動そのものが世界を形作る。",
+      "《制度由行动塑造》· 原话节选",
+      "Institutions shaped by action · direct excerpt",
+      "行動が制度を形作る・原文抜粋"
+    ],
+    [
+      "science",
+      "思想不能创造真理，只能重新发现真理。",
+      "Thought cannot create truth, only rediscover it.",
+      "思想は真理を創れない。ただ再発見するだけだ。",
+      "《制度由行动塑造》· 原话节选",
+      "Institutions shaped by action · direct excerpt",
+      "行動が制度を形作る・原文抜粋"
+    ],
+    [
+      "creation",
+      "不堆叠标签，提炼人格指纹。",
+      "Do not pile up labels. Distill a personality fingerprint.",
+      "ラベルを重ねず、人格の指紋を抽出する。",
+      "角色炼化 · 既有网站原文",
+      "Persona Distill · existing site text",
+      "ペルソナ精錬・既存サイト原文"
+    ],
+    [
+      "agency",
+      "从学与考，到说与做。",
+      "From studying and exams to speaking and doing.",
+      "学びと試験から、発言と実践へ。",
+      "教育经历反思 · 提炼",
+      "Education reflections · distilled",
+      "教育経験の回顧・要約"
+    ],
+    [
+      "science",
+      "自然科学，作为一个工具，被允许存在，当作为一个公理并不合法。",
+      "Natural science is legitimate as a tool, not as an unquestionable axiom.",
+      "自然科学は道具として認められるが、無条件の公理としては正当化されない。",
+      "《认知主权与理论边界》· 原话",
+      "Cognitive sovereignty and theoretical limits · direct quote",
+      "認知主権と理論の境界・原文"
+    ],
+    [
+      "science",
+      "边界其实至关重要，没有边界或者肆意扩张边界，一个理论会迅速溃败。",
+      "Boundaries matter: without them, or when they are extended arbitrarily, a theory quickly collapses.",
+      "境界は極めて重要だ。境界がなく、あるいは恣意的に広げれば、理論は急速に崩れる。",
+      "《认知主权与理论边界》· 原话",
+      "Cognitive sovereignty and theoretical limits · direct quote",
+      "認知主権と理論の境界・原文"
+    ],
+    [
+      "agency",
+      "知识不是认知。",
+      "Knowledge is not cognition.",
+      "知識は認識そのものではない。",
+      "知识与认知讨论 · 网站提炼",
+      "Knowledge and cognition · editorial synthesis",
+      "知識と認識・サイト要約"
+    ],
+    [
+      "agency",
+      "真理不需要加冕。",
+      "Truth needs no crown.",
+      "真理に戴冠は要らない。",
+      "网站宣言 · 新拟",
+      "Site manifesto · new wording",
+      "サイト宣言・新規表現"
+    ],
+    [
+      "creation",
+      "知识是工具，现实是标尺，自由是目的。",
+      "Knowledge is a tool. Reality is the test. Freedom is the aim.",
+      "知識は道具。現実は尺度。自由は目的。",
+      "网站宣言 · 新拟",
+      "Site manifesto · new wording",
+      "サイト宣言・新規表現"
+    ],
+    [
+      "creation",
+      "庄子从来不提供理论，他提供的是思想脚手架，脚手架好用就用，不好用就扔。",
+      "Zhuangzi offers not theories but scaffolding for thought: use it if it works; discard it if it does not.",
+      "荘子が与えるのは理論ではなく思考の足場だ。役立つなら使い、役立たなければ捨てる。",
+      "2026-10-18 庄子讨论 · 原话",
+      "Zhuangzi discussion, 2026-10-18 · direct quote",
+      "荘子の議論、2026-10-18・原文"
+    ],
+    [
+      "creation",
+      "语言只是那个钥匙，不是门，也不是门后的风景。",
+      "Language is only the key, not the door or the view beyond it.",
+      "言葉は鍵にすぎない。扉でも、その先の風景でもない。",
+      "2026-10-14 心斋、坐忘讨论 · 原话",
+      "Fasting the mind and sitting in forgetfulness, 2026-10-14 · direct quote",
+      "心斎・坐忘の議論、2026-10-14・原文"
+    ],
+    [
+      "creation",
+      "减法大于加法。",
+      "Subtraction matters more than addition.",
+      "足し算より引き算。",
+      "2026-10-20 创作方法讨论 · 原话",
+      "Creative method discussion, 2026-10-20 · direct quote",
+      "創作方法の議論、2026-10-20・原文"
+    ],
+    [
+      "agency",
+      "庄子并没有所谓齐物，只有齐物论。",
+      "Zhuangzi does not simply level things; he examines discourse about things.",
+      "荘子は万物を単純に均すのではなく、物をめぐる論を問う。",
+      "2026-10-14 齐物论讨论 · 原话（个人解读）",
+      "Discussion of Qiwulun, 2026-10-14 · personal interpretation",
+      "斉物論の議論、2026-10-14・個人的解釈"
+    ],
+    [
+      "creation",
+      "一个没有负反馈的系统，唯一的结局就是失控。",
+      "A system without negative feedback tends toward loss of control.",
+      "負のフィードバックのないシステムは制御不能に向かう。",
+      "《东虚教育锐评》· 文摘（制度批评）",
+      "Education critique · excerpt (institutional critique)",
+      "教育批評・抜粋（制度批評）"
+    ]
+  ],
+  "projects": [
+    [
+      "lab/worldforge",
+      "WorldForge Lite",
+      "WorldForge Lite",
+      "WorldForge Lite",
+      "将虚构世界的力量体系投影为三基向量，并研究代价与梦境层级。",
+      "A worldbuilding framework mapping fictional power into three basis weights, costs and dream layers.",
+      "架空世界の力を三基底の重み・代償・夢の階層へ写像する世界観設計。",
+      ""
+    ],
+    [
+      "lab/chiron",
+      "Chiron Bridge",
+      "Chiron Bridge",
+      "Chiron Bridge",
+      "浏览器跨站多角色消息协作实验。",
+      "Cross-site multi-role browser messaging experiment.",
+      "ブラウザをまたぐ複数役割のメッセージ連携実験。",
+      ""
+    ],
+    [
+      "art/spine",
+      "锁暝 · 数字桌宠",
+      "Suoming · Digital companion",
+      "鎖暝・デジタルコンパニオン",
+      "基于 Spine 的坐姿交互原型，探索眨眼、视线、微表情与摸头反馈。",
+      "A seated Spine interaction prototype exploring blinks, gaze, micro-expressions and touch feedback.",
+      "Spineによる座り姿の対話試作。瞬き、視線、微表情、触れ合いを探る。",
+      ""
+    ],
+    [
+      "apps/attention",
+      "AttentionInvest",
+      "AttentionInvest",
+      "AttentionInvest",
+      "探索注意力的度量与可视化。Android 原型，使用设备使用统计线索。",
+      "An Android prototype exploring attention measurement and visualization using device usage statistics.",
+      "端末の利用統計から注意の計測・可視化を探るAndroid試作。",
+      ""
+    ],
+    [
+      "art/cats",
+      "猫咪印象",
+      "Feline Impressions",
+      "猫の印象",
+      "八幅印象派风格的数字画作。光线、异色瞳与日常的温柔。",
+      "Eight impressionist-style digital paintings. Light, heterochromia and quiet everyday moments.",
+      "印象派風のデジタル絵画8点。光、オッドアイ、穏やかな日常。",
+      "cats/cat-01.webp"
+    ],
+    [
+      "art/qingming",
+      "清明上河圖 · 汴京長卷",
+      "Qingming · Bianjing in motion",
+      "清明上河図・汴京長巻",
+      "宋代城市的三維藝術演繹。27 段長卷、虹橋、四季晝夜與電影實機影像。",
+      "A 3D artistic interpretation of Song-dynasty urban life. 27 scroll, bridge, seasonal and cinematic development clips.",
+      "宋代都市の3D芸術的再解釈。長巻、虹橋、四季昼夜、短編映像の全27本。",
+      "qingming/bridge-spring-clear.webp"
+    ]
+  ],
+  "details": {
+    "games/crossrealm": [
+      [
+        "不做玩家的剧本，做一个独立运行的世界。",
+        "Not a script for the player, but a world that runs on its own.",
+        "プレイヤーの脚本ではなく、自ら動く世界を。"
+      ],
+      [
+        "玩法设计",
+        "Game design",
+        "ゲーム設計"
+      ],
+      [
+        "体素战略、建设与经营。玩家可以探索、建造、指挥或参与社会，而不是成为所有生产活动的唯一开关。",
+        "Voxel strategy, construction and management. Players explore, build, command or take part in society rather than acting as the sole trigger for production.",
+        "ボクセル戦略・建設・経営。探索、建設、指揮、社会参加を選べる。"
+      ],
+      [
+        "实际验证",
+        "Verified work",
+        "検証済み"
+      ],
+      [
+        "城市产业与公共供水已进行工程验证：综合供水站实现取水、储水、资源支付、拆除限制与恢复测试。水体渲染研究包含反射、深度和焦散。",
+        "Industry and public water systems have been exercised: an integrated station covers extraction, storage, resource payment, demolition constraints and recovery. Water studies explore reflections, depth and caustics.",
+        "産業・公共給水を検証。統合給水施設の取水、貯水、資源支払い、撤去制限、復旧を確認。水面研究は反射・水深・焦散を扱う。"
+      ],
+      [
+        "开发方向",
+        "Development direction",
+        "開発の方向"
+      ],
+      [
+        "连续世界、生态互动和可撤销的代理委托属于持续探索方向，不视作已完成发行功能。",
+        "Continuous worlds, ecological interactions and revocable agent delegation remain ongoing development directions, not shipped features.",
+        "連続世界、生態系の相互作用、撤回可能な委任は開発中の方向性であり、製品版の機能ではない。"
+      ]
+    ],
+    "games/taixu": [
+      [
+        "死亡不是终点，自我才是。",
+        "Death is not the end. The self is.",
+        "死が終わりではない。自己こそが終点だ。"
+      ],
+      [
+        "叙事构想",
+        "Narrative concept",
+        "物語構想"
+      ],
+      [
+        "以中式古风人生模拟承载逐步深入的轮回恐怖，探索身份、记忆与命运。",
+        "A Chinese-inspired life simulation carries progressively deeper reincarnation horror, exploring identity, memory and fate.",
+        "中国風の人生シミュレーションを通じ、輪廻の恐怖、自己、記憶、運命を描く。"
+      ],
+      [
+        "技术方向",
+        "Technical direction",
+        "技術の方向"
+      ],
+      [
+        "Godot 与 JSON 驱动的事件系统；目标平台不等于商店发行。",
+        "Godot and a JSON-driven event system; target platforms do not imply a store release.",
+        "GodotとJSON駆動のイベントシステム。対象プラットフォームは発売済みを意味しない。"
+      ]
+    ],
+    "lab/worldforge": [
+      [
+        "力量是坐标，代价是摩擦。",
+        "Power is a coordinate; cost is friction.",
+        "力は座標、代償は摩擦。"
+      ],
+      [
+        "方法",
+        "Method",
+        "方法"
+      ],
+      [
+        "维度校准 → 力量投影 → 代价配准 → 转嫁校验 → 输出报告。",
+        "Dimension calibration → power projection → cost alignment → transfer checks → report.",
+        "次元の校正→力の射影→代償の整合→転嫁の検証→報告。"
+      ],
+      [
+        "定位",
+        "Scope",
+        "位置づけ"
+      ],
+      [
+        "这是世界观分析与创作工具，不是已发布的模拟器或数学定理。",
+        "A worldbuilding and analysis tool, not a released simulator or mathematical theorem.",
+        "世界観分析・創作ツール。製品版シミュレーターや数学定理ではない。"
+      ]
+    ],
+    "lab/webharness": [
+      [
+        "让 AI 从对话走向可验证的执行。",
+        "From AI conversation to verifiable execution.",
+        "AIを対話から検証可能な実行へ。"
+      ],
+      [
+        "架构",
+        "Architecture",
+        "構成"
+      ],
+      [
+        "浏览器扩展、TypeScript、Manifest V3 与本地 MCP 桥；工具审批与执行日志是设计核心。",
+        "Browser extension, TypeScript, Manifest V3 and a local MCP bridge, with tool approvals and logs at the center.",
+        "ブラウザ拡張、TypeScript、Manifest V3、ローカルMCPブリッジ。承認と実行ログを中心に。"
+      ]
+    ],
+    "lab/agents": [
+      [
+        "执行可以委托，责任不能。",
+        "Execution can be delegated. Responsibility cannot.",
+        "実行は委任できる。責任はできない。"
+      ],
+      [
+        "协作工作流",
+        "Collaboration workflow",
+        "協働ワークフロー"
+      ],
+      [
+        "人类决定目标，主 Agent 做架构与验收，子 Agent 执行独立任务，MCP 接入工具，Git 与测试保留可验证证据。",
+        "Human goals → lead-agent design and acceptance → specialist execution → MCP tools → Git and test evidence.",
+        "人間の目標→主エージェントの設計・検証→専門エージェントの実行→MCPツール→Gitとテスト証拠。"
+      ]
+    ],
+    "art/spine": [
+      [
+        "让角色不仅是图像，也是行为。",
+        "A character is more than an image: it is behavior.",
+        "キャラクターは画像だけでなく、振る舞いでもある。"
+      ],
+      [
+        "原型",
+        "Prototype",
+        "試作"
+      ],
+      [
+        "坐姿 idle 基础上的眨眼、视线追踪、微表情和触摸反馈。第三方角色与骨骼素材不代表原创知识产权。",
+        "Blinking, gaze tracking, micro-expressions and touch feedback on a seated idle animation. Third-party character and rig assets are not claimed as original IP.",
+        "座り姿の待機動作を基に瞬き、視線、微表情、触覚反応を試作。第三者のキャラクターやリグの権利は主張しない。"
+      ]
+    ],
+    "writing/bridge": [
+      [
+        "一座桥，连接文学与世界。",
+        "A bridge between literature and a world.",
+        "文学と世界をつなぐ橋。"
+      ],
+      [
+        "创作档案",
+        "Writing archive",
+        "執筆記録"
+      ],
+      [
+        "卷一至六大纲已建立。正文、人物和西湖世界持续创作，暂不公开剧透与草稿。",
+        "Volumes 1–6 outlined; prose, characters and the West Lake world are in development. Drafts and spoilers are withheld.",
+        "第1〜6巻の構成案あり。本文、人物、西湖世界を制作中。草稿とネタバレは非公開。"
+      ]
+    ],
+    "writing/human": [
+      [
+        "当人类成为稀有身份。",
+        "When being human becomes rare.",
+        "人間であることが希少になるとき。"
+      ],
+      [
+        "叙事主题",
+        "Narrative theme",
+        "物語のテーマ"
+      ],
+      [
+        "AI 内容、信息荒漠与真实身份；以黑色幽默和规则恐怖审视互联网。",
+        "AI content, information deserts and real identity, explored through dark humor and rule-based horror.",
+        "AIコンテンツ、情報の荒野、真のアイデンティティをブラックユーモアとルールホラーで描く。"
+      ]
+    ],
+    "writing/housing": [
+      [
+        "把时代写成主角。",
+        "Make the era the protagonist.",
+        "時代を主人公にする。"
+      ],
+      [
+        "叙事方法",
+        "Narrative method",
+        "物語の方法"
+      ],
+      [
+        "以深圳现实生活为背景，关注社会状态的渐变、多人物视角和日常中的不安。",
+        "Set against everyday life in Shenzhen, exploring changing social conditions, multiple perspectives and ordinary unease.",
+        "深圳の日常を舞台に、社会の緩やかな変化、複数視点、日常の不安を描く。"
+      ]
+    ],
+    "apps/attention": [
+      [
+        "把注意力当作可以理解的资源。",
+        "Treat attention as a resource worth understanding.",
+        "注意を理解すべき資源として扱う。"
+      ],
+      [
+        "当前原型",
+        "Current prototype",
+        "現在の試作"
+      ],
+      [
+        "Android 应用使用统计权限；清单不申请网络权限。当前不提供安装或商店入口。",
+        "Android usage-statistics permission; the manifest requests no network permission. No installer or store link is offered.",
+        "Androidの利用統計権限を使用。マニフェストはネットワーク権限を要求しない。配布・ストアリンクは未掲載。"
+      ]
+    ],
+    "art/cats": [
+      [
+        "世界不只有宏大，也有午后的光。",
+        "The world is more than grand things. It is afternoon light, too.",
+        "世界には壮大さだけでなく、午後の光もある。"
+      ],
+      [
+        "画集",
+        "Collection",
+        "画集"
+      ],
+      [
+        "八幅数字画作，以印象派笔触表现猫咪的眼睛、姿态与光线。",
+        "Eight digital paintings render feline eyes, poses and light in impressionist brushwork.",
+        "印象派風の筆致で猫の瞳、姿勢、光を描く8点のデジタル絵画。"
+      ]
+    ]
+  },
+  "journal": [
+    [
+      "2026-11-15",
+      "清明上河圖 · 影像入館",
+      "Qingming · screening room",
+      "清明上河図・映像館",
+      "27 段實機影像整理入館，四季、晴陰與晝夜可切換。",
+      "27 in-engine clips curated, with seasonal, weather and day/night selections.",
+      "実機映像27本を収録。四季、晴曇、昼夜を選択可能。",
+      "art/qingming"
+    ],
+    [
+      "2026-11-15",
+      "CrossRealm 水体视觉",
+      "CrossRealm water visuals",
+      "CrossRealm 水面表現",
+      "Ref5 水深渐变、Ref3 反射与焦散实验截图入馆。",
+      "Ref5 depth, Ref3 reflections and caustics captures curated.",
+      "Ref5水深・Ref3反射・焦散画像を展示。",
+      "games/crossrealm"
+    ],
+    [
+      "2026-11-14",
+      "综合供水站",
+      "Integrated water station",
+      "統合給水施設",
+      "取水、储水、资源支付与恢复流程完成专项验证。",
+      "Extraction, storage, resource payment and recovery were exercised.",
+      "取水・貯水・資源支払い・復旧の検証。",
+      "games/crossrealm"
+    ],
+    [
+      "2026-11-03",
+      "断桥说蛇 · 大纲档案",
+      "Broken Bridge · outline archive",
+      "断橋説蛇・構成案",
+      "主线仓库已记录卷一至六大纲和连续性审计。",
+      "The outline archive records volumes 1–6 and continuity checks.",
+      "第1〜6巻の構成案と連続性監査を記録。",
+      "writing/bridge"
+    ],
+    [
+      "2026-10-29",
+      "科学与认知边界",
+      "Science and cognitive boundaries",
+      "科学と認知の境界",
+      "从理论适用域、实践知识到认知主权的思想笔记。",
+      "Notes on theory boundaries, practical knowledge and cognitive sovereignty.",
+      "理論の適用域、実践知、認知主権についての記録。",
+      "thoughts"
+    ]
+  ],
+  "cats": [
+    [
+      "cats/cat-01.webp",
+      "慵懒午后",
+      "A lazy afternoon",
+      "のんびりした午後"
+    ],
+    [
+      "cats/cat-02.webp",
+      "午憩",
+      "Afternoon nap",
+      "昼寝"
+    ],
+    [
+      "cats/cat-03.webp",
+      "异色瞳",
+      "Two-colored eyes",
+      "オッドアイ"
+    ],
+    [
+      "cats/cat-04.webp",
+      "枕边",
+      "By the pillow",
+      "枕もと"
+    ],
+    [
+      "cats/cat-05.webp",
+      "梦中光影",
+      "Light in a dream",
+      "夢の中の光"
+    ],
+    [
+      "cats/cat-06.webp",
+      "亲昵",
+      "Closeness",
+      "寄り添う"
+    ],
+    [
+      "cats/cat-07.webp",
+      "舒展",
+      "A stretch",
+      "伸びをする"
+    ],
+    [
+      "cats/cat-08.webp",
+      "凝望",
+      "A quiet gaze",
+      "静かなまなざし"
+    ]
+  ],
+  "method": [
+    [
+      "01",
+      "知识不是认知",
+      "Knowledge is not cognition",
+      "知識は認識ではない",
+      "记住答案不等于理解问题。知识可以无限，生命与注意力却有限。学习不是无限的认证义务；选择问题、辨别前提、检验推理，才让知识成为工具。",
+      "Remembering answers is not understanding questions. Knowledge may be limitless; life and attention are not. Learning is not an endless duty to be certified. Choose questions, examine premises, test reasoning.",
+      "答えを覚えることは問いを理解することではない。知識は無限でも生命と注意は有限だ。学びは終わりなき認証義務ではない。問いを選び、前提を吟味し、推論を検証する。",
+      "《从杨朱到注意力与认知主权》 · 个人思想提炼"
+    ],
+    [
+      "02",
+      "真理不需要加冕",
+      "Truth needs no crown",
+      "真理に戴冠は要らない",
+      "科学的有效性不赋予科学共同体无限的裁决权。证据、反例与可复现性值得尊重；学历、头衔、期刊和程序不能替代论证。自洽不等于真实，域内成功不等于全域有效。",
+      "Scientific effectiveness grants no unlimited authority. Evidence, counterexamples and reproducibility matter; credentials, titles, journals and procedure cannot replace argument. Coherence is not truth; local success is not universal validity.",
+      "科学の有効性は無制限の裁定権を与えない。証拠、反例、再現性を尊重する。学歴、肩書、雑誌、手続きは論証に代わらない。整合性は真実ではなく、局所的成功は普遍性ではない。",
+      "《认知主权与理论边界》 · 个人思想提炼"
+    ],
+    [
+      "03",
+      "从学与考，到说与做",
+      "From studying and exams to speaking and doing",
+      "学びと試験から、発言と実践へ",
+      "南科大的数学训练是我的经历，不是我作品的权威来源。我重新审视以考试、资格和论文为中心的路径：当程序消耗时间却不增加真实信息，当评价取代发现，教育和学术就应接受同样的纠错。",
+      "My mathematical training at SUSTech is part of my experience, not the authority behind my work. I question paths centered on examinations, credentials and papers: when procedures consume time without adding information and evaluation replaces discovery, education and academia must be open to correction.",
+      "南方科技大学での数学の訓練は私の経験であり、作品の権威ではない。試験、資格、論文を中心とする道を問い直す。手続きが時間を消費するだけで情報を増やさず、評価が発見に取って代わるなら、教育と学術にも自己修正が必要だ。",
+      "教育与学术制度讨论 · 第一人称经验提炼"
+    ],
+    [
+      "04",
+      "脚手架，不是神坛",
+      "Scaffolding, not a shrine",
+      "足場であって、祭壇ではない",
+      "在我的庄子解读中，思想是可拆卸的脚手架。用得上便用，失效就改，冗余便删。连庄子也不例外。与惠子的辩难提供思想实验：用具体处境和反例检验前提，而不是以宏大理论压倒对方。",
+      "In my reading of Zhuangzi, thought is removable scaffolding. Use what works, revise what fails, remove what is redundant. Zhuangzi is no exception. His debates with Huizi suggest thought experiments: test premises through concrete situations and counterexamples, not grand theories.",
+      "私の荘子解釈では、思想は取り外せる足場だ。使えるものは使い、失敗したら修正し、冗長なら捨てる。荘子も例外ではない。恵子との議論は思考実験を示す。壮大な理論ではなく、具体的な状況と反例で前提を検証する。",
+      "2026-10-18 庄子讨论 · 个人解读"
+    ],
+    [
+      "05",
+      "语言是钥匙，不是风景",
+      "Language is a key, not the landscape",
+      "言葉は鍵であり、風景ではない",
+      "心斋、坐忘并非靠语言辩论即可抵达的体验。庖丁解牛也不是反对学习：技艺在行动、反馈与对结构的感知中形成。知可以服务于行，却不必充当一切行动的先决许可。",
+      "Fasting the mind and sitting in forgetfulness are experiences not reached through verbal debate alone. Cook Ding is not an argument against learning: skill grows through action, feedback and sensitivity to structure. Knowledge can serve action without becoming its mandatory license.",
+      "心斎と坐忘は言葉の議論だけで到達できる体験ではない。庖丁の解牛も学習の否定ではない。技は行動、フィードバック、構造への感覚から育つ。知は行を助けるが、すべての行動の許可証ではない。",
+      "《庄子·人间世》《庄子·大宗师》《庄子·养生主》 · 个人解读"
+    ],
+    [
+      "06",
+      "齐物论：先审视尺度",
+      "Qiwulun: examine the standard first",
+      "斉物論：まず尺度を問う",
+      "我的解读不是把万物强行拉平，而是追问关于物的是非判断如何成立、尺度由谁设定。观点可以有边界，事实仍能反驳判断。不把反对权威变成另一种不许质疑的权威。",
+      "My reading does not flatten all things into equality. It asks how judgments about things arise and who sets the standard. Views have limits; facts can still refute claims. Opposition to authority must not become another unquestionable authority.",
+      "私の解釈は万物を無理に平等化することではない。物についての是非判断がどう成立し、誰が尺度を定めるのかを問う。見解には境界があり、事実は判断を反駁できる。権威への反対を新たな絶対権威にしない。",
+      "2026-10-14 齐物论讨论 · 个人解读"
+    ],
+    [
+      "07",
+      "减法大于加法",
+      "Subtraction before addition",
+      "足し算より引き算",
+      "使用工具—发现问题—迭代工具—继续使用。新增概念、规则和验证都应说明改变什么决定；无法增加有效反馈的复杂度应被删去。数学、AI、代码和哲学都只是工具，作品与现实检验其边界。",
+      "Use a tool, find a problem, improve the tool, use it again. Every new concept, rule or check should change a decision; complexity without useful feedback should be removed. Mathematics, AI, code and philosophy are tools. Work and reality test their limits.",
+      "道具を使い、問題を見つけ、道具を改良し、また使う。新しい概念、規則、検証は何の判断を変えるかを示す。有効なフィードバックのない複雑さは削る。数学、AI、コード、哲学は道具であり、作品と現実が境界を検証する。",
+      "创作与工程实践 · 方法论提炼"
+    ],
+    [
+      "08",
+      "知识自由流动",
+      "Let knowledge flow freely",
+      "知識を自由に流通させる",
+      "公开知识和作品，让人自由判断；为经过反复试错、持续更新、可以执行的方法与工具付费。方法不因收费就成为真理，任何人都可以检验、改造或拒绝。",
+      "Share knowledge and work openly so people can judge freely. Charge for tested, maintained, executable methods and tools. Payment does not make a method true; anyone may test, adapt or reject it.",
+      "知識と作品を公開し、自由に判断できるようにする。試行錯誤を経て継続更新される実行可能な方法と道具に対価を求める。料金は真理の証明ではない。誰でも検証し、改良し、拒否できる。",
+      "2026-11-15 订阅与方法论讨论 · 网站提炼"
+    ]
+  ]
+}

@@ -1,28 +1,28 @@
-name: Validate Persona Distill
-
+name: Validate Robinleo Atlas
 on:
   push:
     branches: [main]
-    paths:
-      - 'index.html'
-      - 'assets/**'
-      - '_config.yml'
-      - '.github/workflows/pages.yml'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
-      - name: Validate published files
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate and validate public site
         run: |
-          test -s index.html
+          node museum-build.cjs
+          node museum-validate.cjs
+          git diff --exit-code
+      - name: Check legacy assets
+        run: |
+          test -s persona-distill/index.html
           test -s assets/site.css
           test -s assets/site.js
           test -s assets/characters/suoming.webp
@@ -31,11 +31,3 @@ jobs:
           test -s assets/characters/sanyueqi.png
           test -s assets/characters/changyeyue.svg
           test -s assets/characters/aimisi.svg
-          grep -q 'chat.deepseek.com/share/wrhd0bd8jqmj3z5mjm' index.html
-          grep -q 'chat.deepseek.com/share/c2l21x4nznauhoktkh' index.html
-          grep -q 'chatglm.cn/share/IFpaIqlL' index.html
-          grep -q 'chatglm.cn/share/NFpnIqT4' index.html
-          grep -q 'chatglm.cn/share/3FpWIqnX' index.html
-          grep -q 'chatglm.cn/share/0FpNIrvZ' index.html
-          grep -q 'chatglm.cn/share/6FpDIrgS' index.html
-          ! grep -q 'theme: landscape' _config.yml
