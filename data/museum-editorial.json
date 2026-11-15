@@ -342,9 +342,19 @@
         "writing/fengchu": [["凤雏入局，天下易轨。", "A different path through the Three Kingdoms.", "鳳雛が歴史の軌道を変える。"], ["作品信息", "About the book", "作品情報"], ["作者：刘乐平。历史架空小说，以庞统为核心，重构汉末三国的战争、政治与秩序。公开阅读版保留原稿回目及顺序。", "Author: Liu Leping. Alternate-history fiction centered on Pang Tong, reimagining war, politics and order in the late Han and Three Kingdoms. The public edition preserves the manuscript order.", "著者：劉楽平。龐統を中心に、漢末三国の戦争・政治・秩序を再構成した歴史改変小説。原稿の章順を保存。"]],
     "games/crossrealm": [
       [
-        "不做玩家的剧本，做一个独立运行的世界。",
-        "Not a script for the player, but a world that runs on its own.",
-        "プレイヤーの脚本ではなく、自ら動く世界を。"
+        "世界可以无限广大，但玩家永远有权回家。",
+        "The world may be boundless, but every player has the right to go home.",
+        "世界はどこまでも広がっていい。けれど、プレイヤーにはいつでも帰る自由がある。"
+      ],
+      [
+        "创作理念",
+        "Creative philosophy",
+        "創作理念"
+      ],
+      [
+        "不做玩家的剧本，做一个独立运行的世界。CrossRealm 以单机为核心，未来将探索联机与 PvP。玩家可以随时离开，也可以随时回来；游戏应该扩展可能性，而不是制造必须在线的义务。",
+        "Not a script for the player, but a world that runs on its own. CrossRealm is single-player first, with multiplayer and PvP as future directions. Players can leave and return on their own terms; games should expand possibilities, not impose obligations to stay online.",
+        "プレイヤーの脚本ではなく、自ら動く世界を。CrossRealm はシングルプレイを中心に、将来はマルチプレイや PvP も目指す。プレイヤーはいつでも離れ、いつでも帰ってこられる。ゲームは可能性を広げるものであり、オンラインであり続ける義務を課すものではない。"
       ],
       [
         "玩法设计",
