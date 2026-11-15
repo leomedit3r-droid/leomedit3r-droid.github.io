@@ -44,6 +44,7 @@
                 ]
             ],
     "projects":  [
+        ["writing/fengchu", "三国演义外传·凤雏定鼎", "Three Kingdoms: The Phoenix Establishes the Realm", "三国演義外伝・鳳雛定鼎", "刘乐平著。历史架空长篇小说，完稿公开阅读版。", "By Liu Leping. A completed alternate-history novel, available in Chinese as a public reading edition.", "劉楽平 著。歴史改変長編小説。中国語原文の公開読書版。", ""],
                      [
                          "games/crossrealm",
                          "CrossRealm",
