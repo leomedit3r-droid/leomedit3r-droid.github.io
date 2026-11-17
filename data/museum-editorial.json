@@ -336,10 +336,56 @@
       "A 3D artistic interpretation of Song-dynasty urban life. 27 scroll, bridge, seasonal and cinematic development clips.",
       "宋代都市の3D芸術的再解釈。長巻、虹橋、四季昼夜、短編映像の全27本。",
       "qingming/bridge-spring-clear.webp"
+    ],
+    [
+      "writing/happiness-subscription",
+      "幸福协议 · 订阅协议版",
+      "Happiness Agreement · Subscription Edition",
+      "幸福協議・短編版",
+      "陈默将痛苦感知权交给快乐订阅系统。黑色讽刺短篇，保留附录与尾声原文。",
+      "A darkly satirical story of a happiness subscription, with its original appendix and epilogue.",
+      "苦痛を手放した陳黙と幸福サブスクリプションを描く風刺短編。付録と終章を収録。",
+      ""
+    ],
+    [
+      "writing/happiness-agreement",
+      "幸福协议 · 长篇版",
+      "Happiness Agreement · Extended Novel",
+      "幸福協議・長編版",
+      "从2047年的深圳签约大厅展开，讲述快乐算法、神经技术及人的选择。全文十三节。",
+      "An extended science-fiction story of engineered happiness, neural technology and human agency, set in Shenzhen.",
+      "2047年の深圳を舞台に、幸福アルゴリズム、神経技術、人間の選択を描く長編。",
+      ""
+    ],
+    [
+      "writing/supporting-civil-servants",
+      "赡养公务员",
+      "Supporting Civil Servants",
+      "公務員扶養",
+      "以虚构的“赡养型事业编”为核心的制度黑色讽刺小说。",
+      "A dark institutional satire about a fictional civil-service employment scheme.",
+      "架空の「扶養型公務員制度」を題材とする制度風刺小説。",
+      ""
     ]
   ],
   "details": {
-        "writing/fengchu": [["凤雏入局，天下易轨。", "A different path through the Three Kingdoms.", "鳳雛が歴史の軌道を変える。"], ["作品信息", "About the book", "作品情報"], ["作者：刘乐平。历史架空小说，以庞统为核心，重构汉末三国的战争、政治与秩序。公开阅读版保留原稿回目及顺序。", "Author: Liu Leping. Alternate-history fiction centered on Pang Tong, reimagining war, politics and order in the late Han and Three Kingdoms. The public edition preserves the manuscript order.", "著者：劉楽平。龐統を中心に、漢末三国の戦争・政治・秩序を再構成した歴史改変小説。原稿の章順を保存。"]],
+    "writing/fengchu": [
+      [
+        "凤雏入局，天下易轨。",
+        "A different path through the Three Kingdoms.",
+        "鳳雛が歴史の軌道を変える。"
+      ],
+      [
+        "作品信息",
+        "About the book",
+        "作品情報"
+      ],
+      [
+        "作者：刘乐平。历史架空小说，以庞统为核心，重构汉末三国的战争、政治与秩序。公开阅读版保留原稿回目及顺序。",
+        "Author: Liu Leping. Alternate-history fiction centered on Pang Tong, reimagining war, politics and order in the late Han and Three Kingdoms. The public edition preserves the manuscript order.",
+        "著者：劉楽平。龐統を中心に、漢末三国の戦争・政治・秩序を再構成した歴史改変小説。原稿の章順を保存。"
+      ]
+    ],
     "games/crossrealm": [
       [
         "世界可以无限广大，但玩家永远有权回家。",
