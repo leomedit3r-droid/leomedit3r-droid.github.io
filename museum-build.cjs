@@ -10,7 +10,31 @@ const asset=n=>n.startsWith('/')?n:'/assets/museum/'+n;
 const pic=(n,a,priority=false)=>'<img src="'+asset(n)+'" alt="'+h(a)+'" '+(priority?'fetchpriority="high"':'loading="lazy"')+' decoding="async">';
 const cat={science:['科学哲学','Science','科学哲学'],agency:['选择与认知','Agency','選択と認知'],creation:['文学与创作','Creation','文学と創作'],world:['世界设计','World design','世界設計'],ai:['人工智能','AI','人工知能']};
 const get=(i,p)=>p[i+1],desc=(i,p)=>p[i+4],url=(i,p)=>p[0]==='art/persona'?'/persona-distill/':u(i,p[0]);
-const label=(i,p)=>p[0]==='writing/fengchu'?T(i,'完稿 / 公开阅读','Completed / Public edition','完稿・公開版'):T(i,'开发 / 创作档案','Development archive','開発・制作記録');
+const storySources={
+'writing/happiness-subscription':'assets/books/happiness-agreement-original.txt',
+'writing/happiness-agreement':'assets/books/happiness-agreement-novel-original.txt',
+'writing/supporting-civil-servants':'assets/books/supporting-civil-servants-original.txt'
+};
+const storyInline=x=>h(x).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/(^|[^\*])\*([^*\n]+)\*/g,'$1<em>$2</em>');
+const storyMarkup=source=>{
+  let headingIndex=0;
+  return source.replace(/\r\n/g,'\n').trim().split(/\n{2,}/).map(block=>{
+    const t=block.trim();if(!t)return '';
+    let m=t.match(/^(#{1,6})[ \t]+(.+)$/);
+    if(m){headingIndex++;const level=Math.min(4,m[1].length);return '<h'+level+' id="chapter-'+headingIndex+'">'+storyInline(m[2])+'</h'+level+'>';}
+    if(/^(-{3,}|\*{3,})$/.test(t))return '<hr>';
+    if(t.startsWith('>'))return '<blockquote>'+t.split('\n').map(x=>x.replace(/^>\s?/,'' )).filter(Boolean).map(x=>'<p>'+storyInline(x)+'</p>').join('')+'</blockquote>';
+    if(t.split('\n').every(x=>/^\s*\d+\.\s+/.test(x)))return '<ol>'+t.split('\n').map(x=>'<li>'+storyInline(x.replace(/^\s*\d+\.\s+/,''))+'</li>').join('')+'</ol>';
+    return '<p>'+t.split('\n').map(storyInline).join('<br>')+'</p>';
+  }).join('\n');
+};
+const storyReading=(i,p)=>{
+ const source=fs.readFileSync(storySources[p[0]],'utf8');
+ let n=0;const chapters=[...source.matchAll(/^#{2,3}\s+(.+)$/gm)].map(m=>({name:m[1],id:++n}));
+ const toc=chapters.length>1?'<nav class="story-toc" aria-label="'+T(i,'章节目录','Contents','目次')+'"><strong>'+T(i,'目录','Contents','目次')+'</strong>'+chapters.map(c=>'<a href="#chapter-'+c.id+'">'+h(c.name)+'</a>').join('')+'</nav>':'';
+ return section(T(i,'中文原文 · 全文阅读','Full text · Chinese original','中国語原文・全文'),'<div class="story-intro"><p>'+T(i,'作者：刘乐平。完整保留上传稿件的正文顺序、附录与结尾；此处提供直接在线阅读，原始 Markdown 可下载。','By Liu Leping. The complete Chinese manuscript is reproduced without abridgment; original text is available for download.','劉楽平著。中国語原文を省略なく掲載。元のMarkdownもダウンロード可能。')+'</p><p><a class="cta" href="/'+storySources[p[0]]+'" download="'+p[0].split('/')[1]+'.md">'+T(i,'下载原始 Markdown','Download original Markdown','元のMarkdownをダウンロード')+'</a></p></div>'+toc+'<article class="story-reader" lang="zh-CN">'+storyMarkup(source)+'</article>','','story-section');
+};
+const label=(i,p)=>storySources[p[0]]?T(i,'全文 / 中文原文','Full Chinese text','中国語全文'):p[0]==='writing/fengchu'?T(i,'完稿 / 公开阅读','Completed / Public edition','完稿・公開版'):T(i,'开发 / 创作档案','Development archive','開発・制作記録');
 const intro=(i)=>T(i,'知识是工具，现实是标尺，自由是目的。','Knowledge is a tool. Reality is the test. Freedom is the aim.','知識は道具。現実は尺度。自由は目的。');
 const heading=(i)=>T(i,'真理不需要加冕，创造不需要许可。','Truth needs no crown. Creation needs no permission.','真理に戴冠は要らない。創造に許可は要らない。');
 const nav=(i,s)=>'<header class="masthead"><a class="brand" href="'+u(i)+'">ROBINLEO <small> / ATLAS</small></a><nav aria-label="'+T(i,'主导航','Main navigation','メインナビ')+'">'+['games','art','lab','writing','thoughts','method','about'].map(n=>'<a '+(s===n||s.startsWith(n+'/')?'aria-current="page" ':'')+'href="'+u(i,n)+'">'+title(i,n)+'</a>').join('')+'</nav><div class="switch"><a href="'+u(i,'projects')+'" aria-label="'+T(i,'搜索作品','Find works','作品検索')+'">⌕</a><a hreflang="zh-CN" href="'+u(0,s)+'">中</a><a hreflang="en" href="'+u(1,s)+'">EN</a><a hreflang="ja" href="'+u(2,s)+'">日</a><button id="theme" aria-label="'+T(i,'切换主题','Toggle theme','テーマ切替')+'">◐</button></div></header>';
@@ -37,6 +61,7 @@ const featured='<div class="feature"><a class="feature-image" href="'+u(i,'games
 write(i,'',heading(i),home+directory+manifesto+section(T(i,'正在创造的世界','Worlds in the making','制作中の世界'),featured+grid(i,[d.projects[1],d.projects.find(p=>p[0]==='writing/bridge')]),link(i,'games',title(i,'games')))+section(T(i,'视觉档案','Visual archive','映像アーカイブ'),qm.feature(i,u(i,'art/qingming'))+gallery(i,false)+catFeature(i),link(i,'gallery',title(i,'gallery')))+section(T(i,'思想短句','Ideas in a line','思想の一行'),'<div class="quote-grid">'+[ed.quotes[20],ed.quotes[22],ed.quotes[23]].map((q,j)=>quote(i,q,j)).join('')+'</div>',link(i,'thoughts',title(i,'thoughts')))+section(T(i,'工作室近况','Studio updates','制作の近況'),timeline(i,3),link(i,'journal',title(i,'journal')))+section(T(i,'更多创作','More creations','その他の作品'),grid(i,d.projects.filter(p=>['lab/worldforge','art/persona','apps/attention','writing/human'].includes(p[0]))),link(i,'projects',title(i,'projects'))));
 for(const c of ['games','art','lab','writing','apps'])write(i,c,title(i,c),top(i,c,title(i,c),routeDesc[c][i])+section(T(i,'精选作品','Selected works','厳選作品'),grid(i,d.projects.filter(p=>p[0].startsWith(c+'/'))),link(i,'projects',title(i,'projects'))));
 for(const p of d.projects.filter(p=>p[0]!=='art/persona')){
+if(storySources[p[0]]){write(i,p[0],get(i,p),top(i,p[0],get(i,p),desc(i,p))+storyReading(i,p)+section(T(i,'继续探索','Keep exploring','さらに探索'),link(i,'writing',title(i,'writing'))));continue;}
 if(p[0]==='art/qingming'){write(i,p[0],get(i,p),qm.render(i)+section(T(i,'继续探索','Keep exploring','さらに探索'),link(i,'art',title(i,'art'))+' '+link(i,'gallery',title(i,'gallery'))));continue;}
 const det=ed.details[p[0]]||[[desc(0,p),desc(1,p),desc(2,p)],[T(0,'作品方向','Scope','方向'),T(1,'作品方向','Scope','方向'),T(2,'作品方向','Scope','方向')],[desc(0,p),desc(1,p),desc(2,p)]];
 let details='';for(let k=1;k<det.length;k+=2)details+='<article class="detail-block"><small>'+String((k+1)/2).padStart(2,'0')+'</small><div><h3>'+det[k][i]+'</h3><p>'+det[k+1][i]+'</p></div></article>';
