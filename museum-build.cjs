@@ -13,7 +13,9 @@ const get=(i,p)=>p[i+1],desc=(i,p)=>p[i+4],url=(i,p)=>p[0]==='art/persona'?'/per
 const storySources={
 'writing/happiness-subscription':'assets/books/happiness-agreement-original.txt',
 'writing/happiness-agreement':'assets/books/happiness-agreement-novel-original.txt',
-'writing/supporting-civil-servants':'assets/books/supporting-civil-servants-original.txt'
+'writing/supporting-civil-servants':'assets/books/supporting-civil-servants-original.txt',
+'writing/abyss':'assets/books/abyss-original.md',
+'writing/abyss/appendix':'assets/books/abyss-appendix-original.md'
 };
 const storyInline=x=>h(x).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/(^|[^\*])\*([^*\n]+)\*/g,'$1<em>$2</em>');
 const storyMarkup=source=>{
@@ -29,10 +31,11 @@ const storyMarkup=source=>{
   }).join('\n');
 };
 const storyReading=(i,p)=>{
- const source=fs.readFileSync(storySources[p[0]],'utf8');
- let n=0;const chapters=[...source.matchAll(/^#{2,3}\s+(.+)$/gm)].map(m=>({name:m[1],id:++n}));
+ const original=fs.readFileSync(storySources[p[0]],'utf8');
+ const source=p[0].startsWith('writing/abyss')?original.replace(/^---\r?\n[\s\S]*?\r?\n---\s*\n/,'').replace(/^# 目录\s*\n[\s\S]*?(?=^# 正文\s*$)/m,'').replace(/^# 正文\s*\n/m,'').replace(/^## 知识关联\s*\n[\s\S]*$/m,'').trim():original;
+ let n=0;const chapters=[...source.matchAll(/^#{1,6}\s+(.+)$/gm)].map(m=>({name:m[1],id:++n}));
  const toc=chapters.length>1?'<nav class="story-toc" aria-label="'+T(i,'章节目录','Contents','目次')+'"><strong>'+T(i,'目录','Contents','目次')+'</strong>'+chapters.map(c=>'<a href="#chapter-'+c.id+'">'+h(c.name)+'</a>').join('')+'</nav>':'';
- return section(T(i,'中文原文 · 全文阅读','Full text · Chinese original','中国語原文・全文'),'<div class="story-intro"><p>'+T(i,'作者：刘乐平。完整保留上传稿件的正文顺序、附录与结尾；此处提供直接在线阅读，原始 Markdown 可下载。','By Liu Leping. The complete Chinese manuscript is reproduced without abridgment; original text is available for download.','劉楽平著。中国語原文を省略なく掲載。元のMarkdownもダウンロード可能。')+'</p><p><a class="cta" href="/'+storySources[p[0]]+'" download="'+p[0].split('/')[1]+'.md">'+T(i,'下载原始 Markdown','Download original Markdown','元のMarkdownをダウンロード')+'</a></p></div>'+toc+'<article class="story-reader" lang="zh-CN">'+storyMarkup(source)+'</article>','','story-section');
+ return section(T(i,'中文原文 · 全文阅读','Full text · Chinese original','中国語原文・全文'),'<div class="story-intro"><p>'+T(i,'作者：刘乐平。保留完整原稿，正文与附录分卷阅读；原始 Markdown 可下载。','By Liu Leping. Read the original Chinese text in full, including separate appendices.','劉楽平著。中国語原文と付録をそれぞれ全文掲載。')+'</p><p><a class="cta" href="'+(storySources[p[0]].endsWith('.md')?'https://raw.githubusercontent.com/leomedit3r-droid/leomedit3r-droid.github.io/main/'+storySources[p[0]]:'/'+storySources[p[0]])+'" download="'+p[0].split('/').slice(1).join('-')+'.md">'+T(i,'下载原始 Markdown','Download original Markdown','元のMarkdownをダウンロード')+'</a></p></div>'+toc+'<article class="story-reader" lang="zh-CN">'+storyMarkup(source)+'</article>','','story-section');
 };
 const label=(i,p)=>storySources[p[0]]?T(i,'全文 / 中文原文','Full Chinese text','中国語全文'):p[0]==='writing/fengchu'?T(i,'完稿 / 公开阅读','Completed / Public edition','完稿・公開版'):T(i,'开发 / 创作档案','Development archive','開発・制作記録');
 const intro=(i)=>T(i,'知识是工具，现实是标尺，自由是目的。','Knowledge is a tool. Reality is the test. Freedom is the aim.','知識は道具。現実は尺度。自由は目的。');
@@ -61,7 +64,7 @@ const featured='<div class="feature"><a class="feature-image" href="'+u(i,'games
 write(i,'',heading(i),home+directory+manifesto+section(T(i,'正在创造的世界','Worlds in the making','制作中の世界'),featured+grid(i,[d.projects[1],d.projects.find(p=>p[0]==='writing/bridge')]),link(i,'games',title(i,'games')))+section(T(i,'视觉档案','Visual archive','映像アーカイブ'),qm.feature(i,u(i,'art/qingming'))+gallery(i,false)+catFeature(i),link(i,'gallery',title(i,'gallery')))+section(T(i,'思想短句','Ideas in a line','思想の一行'),'<div class="quote-grid">'+[ed.quotes[20],ed.quotes[22],ed.quotes[23]].map((q,j)=>quote(i,q,j)).join('')+'</div>',link(i,'thoughts',title(i,'thoughts')))+section(T(i,'工作室近况','Studio updates','制作の近況'),timeline(i,3),link(i,'journal',title(i,'journal')))+section(T(i,'更多创作','More creations','その他の作品'),grid(i,d.projects.filter(p=>['lab/worldforge','art/persona','apps/attention','writing/human'].includes(p[0]))),link(i,'projects',title(i,'projects'))));
 for(const c of ['games','art','lab','writing','apps'])write(i,c,title(i,c),top(i,c,title(i,c),routeDesc[c][i])+section(T(i,'精选作品','Selected works','厳選作品'),grid(i,d.projects.filter(p=>p[0].startsWith(c+'/'))),link(i,'projects',title(i,'projects'))));
 for(const p of d.projects.filter(p=>p[0]!=='art/persona')){
-if(storySources[p[0]]){write(i,p[0],get(i,p),top(i,p[0],get(i,p),desc(i,p))+storyReading(i,p)+section(T(i,'继续探索','Keep exploring','さらに探索'),link(i,'writing',title(i,'writing'))));continue;}
+if(storySources[p[0]]){write(i,p[0],get(i,p),top(i,p[0],get(i,p),desc(i,p))+storyReading(i,p)+(p[0]==='writing/abyss'?section(T(i,'附录','Appendices','付録'),'<p>'+T(i,'另有七篇延伸故事，独立保留原文。','Seven companion stories in the complete Chinese original.','全七編の付録を原文で公開。')+'</p>'+link(i,'writing/abyss/appendix',T(i,'阅读附录','Read appendices','付録を読む'))):'')+section(T(i,'继续探索','Keep exploring','さらに探索'),link(i,'writing',title(i,'writing'))));continue;}
 if(p[0]==='art/qingming'){write(i,p[0],get(i,p),qm.render(i)+section(T(i,'继续探索','Keep exploring','さらに探索'),link(i,'art',title(i,'art'))+' '+link(i,'gallery',title(i,'gallery'))));continue;}
 const det=ed.details[p[0]]||[[desc(0,p),desc(1,p),desc(2,p)],[T(0,'作品方向','Scope','方向'),T(1,'作品方向','Scope','方向'),T(2,'作品方向','Scope','方向')],[desc(0,p),desc(1,p),desc(2,p)]];
 let details='';for(let k=1;k<det.length;k+=2)details+='<article class="detail-block"><small>'+String((k+1)/2).padStart(2,'0')+'</small><div><h3>'+det[k][i]+'</h3><p>'+det[k+1][i]+'</p></div></article>';
@@ -69,6 +72,8 @@ const visuals=p[0]==='writing/fengchu'?section(T(i,'公开阅读','Read the book
 const cross=p[0]==='writing/bridge'?link(i,'art',title(i,'art')):p[0]==='lab/agents'?link(i,'lab/webharness','WebHarness'):p[0]==='art/spine'?'<a class="more" href="/persona-distill/">Persona Distill ↗</a>':'';
 write(i,p[0],get(i,p),top(i,p[0],get(i,p),desc(i,p))+'<section class="project-statement"><small>'+label(i,p)+'</small><h2>'+det[0][i]+'</h2></section>'+section(T(i,'作品与方法','Work and method','作品と方法'),details)+visuals+section(T(i,'继续探索','Keep exploring','さらに探索'),link(i,p[0].split('/')[0],title(i,p[0].split('/')[0]))+' '+cross));
 }
+const appendix=["writing/abyss/appendix","背对深渊 · 附录","Facing the Abyss · Appendices","深淵に背を向けて・付録","七篇延伸篇章，与正文一起构成完整作品。","Seven companion stories in the complete Chinese original.","全七編の付録を中国語原文で公開。",""];
+write(i,appendix[0],get(i,appendix),top(i,appendix[0],get(i,appendix),desc(i,appendix))+storyReading(i,appendix)+section(T(i,'继续探索','Keep exploring','さらに探索'),link(i,'writing/abyss',T(i,'返回正文','Back to the novel','本文へ戻る'))+' '+link(i,'writing',title(i,'writing'))));
 write(i,'projects',title(i,'projects'),top(i,'projects',title(i,'projects'),T(i,'不同领域，共同的创造欲。按类别浏览或搜索作品。','Different fields, one creative drive. Browse or search the archive.','異なる分野、一つの創作意欲。分類や検索で作品を探す。'))+section(T(i,'全部作品','All works','全作品'),'<div class="filter-controls"><label for="search">'+T(i,'搜索作品','Search works','作品検索')+'</label><input id="search" type="search" placeholder="'+T(i,'输入名称、技术或关键词','Name, technology or keyword','名前、技術、キーワード')+'">'+chips(i,[['all','全部','All','すべて'],...['games','art','lab','writing','apps'].map(c=>[c,...d.nav.find(n=>n[0]===c).slice(1)])],'data-filter')+'<p id="result-count" aria-live="polite">'+d.projects.length+' '+T(i,'件作品','works','件')+'</p></div>'+grid(i,d.projects)+'<p id="empty" hidden>'+T(i,'没有找到符合条件的作品。','No matching works.','該当する作品がありません。')+'</p>'));
 write(i,'gallery',title(i,'gallery'),top(i,'gallery',title(i,'gallery'),T(i,'以作品本身为主角。真实开发画面，点击放大。','Let the work speak. Actual development captures, open to enlarge.','作品そのものが主役。実際の開発画像を拡大して鑑賞。'))+section(T(i,'清明上河圖 · 影像館','Qingming · screening room','清明上河図・映像館'),qm.feature(i,u(i,'art/qingming')),link(i,'art/qingming',T(i,'觀看全部影像','View all films','全映像を見る')))+section('CrossRealm / Visual studies',gallery(i),link(i,'games/crossrealm','CrossRealm'))+section(T(i,'猫咪印象','Feline Impressions','猫の印象'),catFeature(i),link(i,'art/cats',T(i,'完整画集','Full collection','全作品')))+section(T(i,'数字角色','Digital characters','デジタルキャラクター'),grid(i,d.projects.filter(p=>p[0].startsWith('art/')&&p[0]!=='art/cats'))));
 write(i,'journal',title(i,'journal'),top(i,'journal',title(i,'journal'),T(i,'记录真实发生的创造过程，而非虚构完成度。','A record of real creative progress, not invented completion percentages.','架空の完成率ではなく、実際の制作過程を記録する。'))+section(T(i,'时间线','Timeline','タイムライン'),timeline(i)));
