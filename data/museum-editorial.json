@@ -298,16 +298,6 @@
       ""
     ],
     [
-      "art/spine",
-      "锁暝 · 数字桌宠",
-      "Suoming · Digital companion",
-      "鎖暝・デジタルコンパニオン",
-      "基于 Spine 的坐姿交互原型，探索眨眼、视线、微表情与摸头反馈。",
-      "A seated Spine interaction prototype exploring blinks, gaze, micro-expressions and touch feedback.",
-      "Spineによる座り姿の対話試作。瞬き、視線、微表情、触れ合いを探る。",
-      ""
-    ],
-    [
       "apps/attention",
       "AttentionInvest",
       "AttentionInvest",
@@ -529,23 +519,6 @@
         "人类决定目标，主 Agent 做架构与验收，子 Agent 执行独立任务，MCP 接入工具，Git 与测试保留可验证证据。",
         "Human goals → lead-agent design and acceptance → specialist execution → MCP tools → Git and test evidence.",
         "人間の目標→主エージェントの設計・検証→専門エージェントの実行→MCPツール→Gitとテスト証拠。"
-      ]
-    ],
-    "art/spine": [
-      [
-        "让角色不仅是图像，也是行为。",
-        "A character is more than an image: it is behavior.",
-        "キャラクターは画像だけでなく、振る舞いでもある。"
-      ],
-      [
-        "原型",
-        "Prototype",
-        "試作"
-      ],
-      [
-        "坐姿 idle 基础上的眨眼、视线追踪、微表情和触摸反馈。第三方角色与骨骼素材不代表原创知识产权。",
-        "Blinking, gaze tracking, micro-expressions and touch feedback on a seated idle animation. Third-party character and rig assets are not claimed as original IP.",
-        "座り姿の待機動作を基に瞬き、視線、微表情、触覚反応を試作。第三者のキャラクターやリグの権利は主張しない。"
       ]
     ],
     "writing/bridge": [
