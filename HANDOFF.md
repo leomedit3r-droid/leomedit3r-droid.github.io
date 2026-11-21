@@ -4,7 +4,7 @@
 - GitHub Pages / Jekyll static site; run `node museum-build.cjs` and `node museum-validate.cjs` before committing.
 - Main content: `data/museum.json` and `data/museum-editorial.json`. Three language editions are generated and committed.
 - `museum-qingming.cjs` defines the Qingming screening room and the exact 27-clip catalog. The JavaScript uses one video player with explicit user-controlled playback.
-- The original Persona Distill exhibit remains at `/persona-distill/`; legacy root anchors redirect there. Its seven share links, original sponsor section, and original QR image are unchanged.
+- The original Persona Distill exhibit remains at `/persona-distill/`; legacy root anchors redirect there. Its five remaining ChatGLM share links are retained; obsolete DeepSeek share links have been removed. The original sponsor section and QR image are unchanged.
 - Each generated page ends with a voluntary sponsorship link to `/persona-distill/#support`. No additional payment flow or payment processor is introduced.
 
 ## Content and publication boundaries

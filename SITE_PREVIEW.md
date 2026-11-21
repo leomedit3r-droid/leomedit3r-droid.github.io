@@ -7,18 +7,16 @@
 - **首页**：角色炼化理念与人格指纹结构示意；VOICE / BEHAVIOR / CORE 是概念结构，不是实际角色数据。
 - **理念**：语言指纹、关系边界、价值与行为决策。
 - **方法**：原作锚点 → 分层提炼 → 极简封装与校验。
-- **作品预览**：七份公开对话入口，分别托管于 DeepSeek 与智谱清言。
+- **作品预览**：五份公开对话入口，均托管于智谱清言。
 - **赞助**：作者自愿公开的支付宝赞助二维码。
 
-## 七份公开作品
+## 五份公开作品
 
-1. 锁暝 — DeepSeek：https://chat.deepseek.com/share/wrhd0bd8jqmj3z5mjm
-2. 昔涟 — DeepSeek：https://chat.deepseek.com/share/c2l21x4nznauhoktkh
-3. 锁暝 — 智谱清言：https://chatglm.cn/share/IFpaIqlL
-4. 昔涟 — 智谱清言：https://chatglm.cn/share/NFpnIqT4
-5. 三月七 — 智谱清言：https://chatglm.cn/share/3FpWIqnX
-6. 长夜月 — 智谱清言：https://chatglm.cn/share/0FpNIrvZ
-7. 爱弥斯 — 智谱清言：https://chatglm.cn/share/6FpDIrgS
+1. 锁暝 — 智谱清言：https://chatglm.cn/share/IFpaIqlL
+2. 昔涟 — 智谱清言：https://chatglm.cn/share/NFpnIqT4
+3. 三月七 — 智谱清言：https://chatglm.cn/share/3FpWIqnX
+4. 长夜月 — 智谱清言：https://chatglm.cn/share/0FpNIrvZ
+5. 爱弥斯 — 智谱清言：https://chatglm.cn/share/6FpDIrgS
 
 链接与角色对应关系按作者提供的信息记录；本站不复制对话正文。外部分享页的可访问性、内容与登录要求由原平台决定。
 
@@ -35,7 +33,7 @@
 
 ## 文件结构
 
-- `index.html` — 页面内容与语义化结构。
+- `persona-distill/index.html` — 角色炼化页面内容与语义化结构。
 - `assets/site.css` — 响应式布局、主题与视觉样式。
 - `assets/site.js` — 主题切换、移动导航交互。
 - `_config.yml` — GitHub Pages 使用的 Jekyll 配置。
@@ -47,8 +45,8 @@
 
 1. 向 `main` 推送页面、资源或配置改动。
 2. GitHub Pages 自动运行 `pages build and deployment`。
-3. Jekyll 读取根目录的 `index.html`、`assets/` 和本文件中的配置并发布。
-4. 独立的 `Validate Persona Distill` 工作流检查七个分享链接与关键资源，不执行第二次部署。
+3. Jekyll 读取仓库根目录的站点页面、`persona-distill/` 页面、`assets/` 和 `_config.yml` 并发布。
+4. Pages 工作流中的校验脚本检查五个智谱清言分享链接与关键资源，不执行第二次部署。
 
 早期 Hexo 文件作为历史脚手架保留，但已从公开构建中排除。Hexo Git 部署配置已经移除；**不要运行 `hexo deploy` 或 `npm run deploy`**。
 

@@ -5,9 +5,11 @@ const routes=['','en','ja'].flatMap(lang=>[...sections,...slugs].map(s=>'/'+[lan
 routes.push('/writing/abyss/appendix/','/en/writing/abyss/appendix/','/ja/writing/abyss/appendix/');
 routes.push('/persona-distill/');
 const failures=[];let links=0;for(const r of routes){const f=path.join('.','.'+r,'index.html');if(!fs.existsSync(f)){failures.push('Missing route '+r);continue}const html=fs.readFileSync(f,'utf8');if(r!=='/persona-distill/'&&!/<div class="footer-support">[^]*?href="\/persona-distill\/#support"[^]*?<\/div><\/footer>/.test(html))failures.push('Missing footer sponsor '+r);for(const m of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)){const url=m[1].split('#')[0].split('?')[0];if(!url)continue;const p='.'+url+(url.endsWith('/')?'index.html':'');if(!fs.existsSync(p))failures.push(r+' -> '+url);links++}}
-const old=fs.readFileSync('persona-distill/index.html','utf8');for(const share of ['wrhd0bd8jqmj3z5mjm','c2l21x4nznauhoktkh','IFpaIqlL','NFpnIqT4','3FpWIqnX','0FpNIrvZ','6FpDIrgS'])if(!old.includes(share))failures.push('Missing legacy share '+share);
+const old=fs.readFileSync('persona-distill/index.html','utf8');for(const share of ['IFpaIqlL','NFpnIqT4','3FpWIqnX','0FpNIrvZ','6FpDIrgS'])if(!old.includes(share))failures.push('Missing ChatGLM share '+share);
+const shareCount=(old.match(/href="https:\/\/chatglm\.cn\/share\//g)||[]).length;if(shareCount!==5)failures.push('Expected five ChatGLM share links, found '+shareCount);
+if(/https:\/\/chat\.deepseek\.com\/share\//i.test(old))failures.push('Obsolete DeepSeek share URL remains');
 for(const c of require('./museum-qingming.cjs').clips)for(const ext of ['.mp4','.webp'])if(!fs.existsSync('assets/museum/qingming/'+c.id+ext)||fs.statSync('assets/museum/qingming/'+c.id+ext).size===0)failures.push('Missing Qingming asset '+c.id+ext);
 if(!old.includes('id="support"')||!fs.existsSync('assets/characters/alipay-qr.jpg'))failures.push('Missing original sponsor QR');
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 const site='https://leomedit3r-droid.github.io';fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(r=>'<url><loc>'+site+r+'</loc></url>').join('')+'</urlset>\n');fs.writeFileSync('robots.txt','User-agent: *\nAllow: /\nSitemap: '+site+'/sitemap.xml\n');
-console.log('PASS '+routes.length+' routes, '+links+' internal links and assets, seven legacy shares');
+console.log('PASS '+routes.length+' routes, '+links+' internal links and assets, five ChatGLM shares');
