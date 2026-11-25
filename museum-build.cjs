@@ -11,6 +11,7 @@ const pic=(n,a,priority=false)=>'<img src="'+asset(n)+'" alt="'+h(a)+'" '+(prior
 const cat={science:['科学哲学','Science','科学哲学'],agency:['选择与认知','Agency','選択と認知'],creation:['文学与创作','Creation','文学と創作'],world:['世界设计','World design','世界設計'],ai:['人工智能','AI','人工知能']};
 const get=(i,p)=>p[i+1],desc=(i,p)=>p[i+4],url=(i,p)=>p[0]==='art/persona'?'/persona-distill/':u(i,p[0]);
 const storySources={
+'writing/friction':'assets/books/friction-original.txt',
 'writing/happiness-subscription':'assets/books/happiness-agreement-original.txt',
 'writing/happiness-agreement':'assets/books/happiness-agreement-novel-original.txt',
 'writing/supporting-civil-servants':'assets/books/supporting-civil-servants-original.txt',
@@ -18,24 +19,28 @@ const storySources={
 'writing/abyss/appendix':'assets/books/abyss-appendix-original.md'
 };
 const storyInline=x=>h(x).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/(^|[^\*])\*([^*\n]+)\*/g,'$1<em>$2</em>');
-const storyMarkup=source=>{
+const storyMarkup=(source,friction=false)=>{
   let headingIndex=0;
+  const inline=friction?x=>storyInline(x).replace(/`([^`\n]+)`/g,'<code>$1</code>'):storyInline;
   return source.replace(/\r\n/g,'\n').trim().split(/\n{2,}/).map(block=>{
     const t=block.trim();if(!t)return '';
     let m=t.match(/^(#{1,6})[ \t]+(.+)$/);
-    if(m){headingIndex++;const level=Math.min(4,m[1].length);return '<h'+level+' id="chapter-'+headingIndex+'">'+storyInline(m[2])+'</h'+level+'>';}
-    if(/^(-{3,}|\*{3,})$/.test(t))return '<hr>';
-    if(t.startsWith('>'))return '<blockquote>'+t.split('\n').map(x=>x.replace(/^>\s?/,'' )).filter(Boolean).map(x=>'<p>'+storyInline(x)+'</p>').join('')+'</blockquote>';
-    if(t.split('\n').every(x=>/^\s*\d+\.\s+/.test(x)))return '<ol>'+t.split('\n').map(x=>'<li>'+storyInline(x.replace(/^\s*\d+\.\s+/,''))+'</li>').join('')+'</ol>';
-    return '<p>'+t.split('\n').map(storyInline).join('<br>')+'</p>';
+    if(m){headingIndex++;const level=friction?3:Math.min(4,m[1].length);return '<h'+level+' id="chapter-'+headingIndex+'">'+inline(m[2])+'</h'+level+'>';}
+    if(/^(-{3,}|\*{3,})$/.test(t)||(friction&&/^\* \* \*$/.test(t)))return '<hr>';
+    if(t.startsWith('>'))return '<blockquote>'+t.split('\n').map(x=>x.replace(/^>\s?/,'' )).filter(Boolean).map(x=>'<p>'+inline(x)+'</p>').join('')+'</blockquote>';
+    if(t.split('\n').every(x=>/^\s*\d+\.\s+/.test(x)))return '<ol>'+t.split('\n').map(x=>'<li>'+inline(x.replace(/^\s*\d+\.\s+/,''))+'</li>').join('')+'</ol>';
+    return '<p>'+t.split('\n').map(inline).join('<br>')+'</p>';
   }).join('\n');
 };
 const storyReading=(i,p)=>{
+ const friction=p[0]==='writing/friction';
  const original=fs.readFileSync(storySources[p[0]],'utf8');
  const source=p[0].startsWith('writing/abyss')?original.replace(/^---\r?\n[\s\S]*?\r?\n---\s*\n/,'').replace(/^# 目录\s*\n[\s\S]*?(?=^# 正文\s*$)/m,'').replace(/^# 正文\s*\n/m,'').replace(/^## 知识关联\s*\n[\s\S]*$/m,'').trim():original;
  let n=0;const chapters=[...source.matchAll(/^#{1,6}\s+(.+)$/gm)].map(m=>({name:m[1],id:++n}));
- const toc=chapters.length>1?'<nav class="story-toc" aria-label="'+T(i,'章节目录','Contents','目次')+'"><strong>'+T(i,'目录','Contents','目次')+'</strong>'+chapters.map(c=>'<a href="#chapter-'+c.id+'">'+h(c.name)+'</a>').join('')+'</nav>':'';
- return section(T(i,'中文原文 · 全文阅读','Full text · Chinese original','中国語原文・全文'),'<div class="story-intro"><p>'+T(i,'作者：刘乐平。保留完整原稿，正文与附录分卷阅读；原始 Markdown 可下载。','By Liu Leping. Read the original Chinese text in full, including separate appendices.','劉楽平著。中国語原文と付録をそれぞれ全文掲載。')+'</p><p><a class="cta" href="'+('/'+storySources[p[0]].replace(/\.md$/,'.txt'))+'" download="'+p[0].split('/').slice(1).join('-')+'.md">'+T(i,'下载原始 Markdown','Download original Markdown','元のMarkdownをダウンロード')+'</a></p></div>'+toc+'<article class="story-reader" lang="zh-CN">'+storyMarkup(source)+'</article>','','story-section');
+ const tocLinks=chapters=>chapters.map(c=>'<a href="#chapter-'+c.id+'">'+h(c.name)+'</a>').join('');
+ const volumeToc=friction?[[0,8,T(i,'第一卷','Volume I','第一巻')],[8,16,T(i,'第二卷','Volume II','第二巻')],[16,40,T(i,'第三卷','Volume III','第三巻')]].map(([a,b,name])=>'<strong>'+name+'</strong>'+tocLinks(chapters.slice(a,b))).join(''):'';
+ const toc=chapters.length>1?'<nav class="story-toc" aria-label="'+T(i,'章节目录','Contents','目次')+'">'+(friction?volumeToc:'<strong>'+T(i,'目录','Contents','目次')+'</strong>'+tocLinks(chapters))+'</nav>':'';
+ return section(T(i,'中文原文 · 全文阅读','Full text · Chinese original','中国語原文・全文'),'<div class="story-intro"><p>'+(friction?T(i,'作者：刘乐平。三卷四十章，中文全文。作品为虚构小说。','By Liu Leping. Three volumes, forty chapters, in the original Chinese. A work of fiction.','劉楽平著。全三巻四十章の中国語原文。本作はフィクションです。'):T(i,'作者：刘乐平。保留完整原稿，正文与附录分卷阅读；原始 Markdown 可下载。','By Liu Leping. Read the original Chinese text in full, including separate appendices.','劉楽平著。中国語原文と付録をそれぞれ全文掲載。'))+'</p><p><a class="cta" href="'+('/'+storySources[p[0]].replace(/\.md$/,'.txt'))+'" download="'+p[0].split('/').slice(1).join('-')+'.md">'+T(i,'下载原始 Markdown','Download original Markdown','元のMarkdownをダウンロード')+'</a></p></div>'+toc+'<article class="story-reader" lang="zh-CN">'+storyMarkup(source,friction)+'</article>','','story-section');
 };
 const label=(i,p)=>storySources[p[0]]?T(i,'全文 / 中文原文','Full Chinese text','中国語全文'):p[0]==='writing/fengchu'?T(i,'完稿 / 公开阅读','Completed / Public edition','完稿・公開版'):T(i,'开发 / 创作档案','Development archive','開発・制作記録');
 const intro=(i)=>T(i,'知识是工具，现实是标尺，自由是目的。','Knowledge is a tool. Reality is the test. Freedom is the aim.','知識は道具。現実は尺度。自由は目的。');
