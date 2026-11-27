@@ -18,7 +18,18 @@ qb.forEach(b=>b.addEventListener('click',()=>filterQuotes(b.dataset.quoteFilter)
 const feedback=document.querySelector('#quote-feedback');
 function report(s){if(feedback)feedback.textContent=s}
 document.querySelectorAll('[data-copy-quote]').forEach(b=>b.addEventListener('click',async()=>{const q=b.closest('.quote-card')?.querySelector('blockquote')?.textContent||'';try{await navigator.clipboard.writeText(q);b.textContent=L('已复制','Copied','コピー済み');report(b.textContent)}catch{report(L('无法自动复制，请选中文字。','Copy unavailable; select the text.','自動コピーできません。文字を選択してください。'))}}));
-let last=-1;document.querySelector('#random-quote')?.addEventListener('click',()=>{const visible=qi.filter(x=>!x.hidden);if(!visible.length)return;let n=Math.floor(Math.random()*visible.length);if(visible.length>1&&n===last)n=(n+1)%visible.length;last=n;const card=visible[n];card.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});card.classList.add('quote-highlight');setTimeout(()=>card.classList.remove('quote-highlight'),1500);report(card.querySelector('blockquote')?.textContent||'')});
+let lastQuote;
+document.querySelector('#random-quote')?.addEventListener('click',()=>{
+  const visible=qi.filter(x=>!x.hidden);
+  if(!visible.length)return;
+  const candidates=visible.length>1?visible.filter(card=>card!==lastQuote):visible;
+  const card=candidates[Math.floor(Math.random()*candidates.length)];
+  lastQuote=card;
+  card.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  card.classList.add('quote-highlight');
+  setTimeout(()=>card.classList.remove('quote-highlight'),1500);
+  report(card.querySelector('blockquote')?.textContent||'');
+});
 function hash(){if(location.pathname==='/'&&['#home','#principles','#process','#works','#about','#support'].includes(location.hash)){location.replace('/persona-distill/'+location.hash);return}if(location.hash.startsWith('#quote-')){const q=document.getElementById(location.hash.slice(1));if(q?.hidden)filterQuotes('all');q?.scrollIntoView({block:'center'})}}
 hash();addEventListener('hashchange',hash);
 })();
